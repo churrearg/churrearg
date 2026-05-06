@@ -9,7 +9,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
 <style>
-#page-cover{position:fixed;inset:0;background:#000;z-index:99993;pointer-events:none;transition:opacity .4s ease;}
+#page-cover{position:fixed;inset:0;background:#000;z-index:99990;pointer-events:none;transition:opacity .4s ease;}
 #page-cover.gone{opacity:0;pointer-events:none;}
 
 :root{--black:#000;--gold:#C9A84C;--gl:#e8c96e;--gd:#9a7a30;--carbon:#1e1e1e;--smoke:#111;--text:#e8e8e8;--muted:#909090;}
@@ -1015,13 +1015,18 @@ document.addEventListener('keydown',e=>{
   if(e.key==='F12'){e.preventDefault();}
   if(e.ctrlKey&&e.shiftKey&&['I','J','C','U'].includes(e.key)){e.preventDefault();}
   if(e.ctrlKey&&['U','S'].includes(e.key)){e.preventDefault();}
+  if(e.ctrlKey&&e.shiftKey&&e.key==='D'){e.preventDefault();toggleAdmin();}
 });
+// Devtools blur: solo desktop — en mobile outerWidth/innerWidth dan falsos positivos
+// y causan que el body quede con blur permanente, bloqueando la UI completa
 let _dt=false;
-setInterval(()=>{
-  const t=window.outerWidth-window.innerWidth>160||window.outerHeight-window.innerHeight>160;
-  if(t&&!_dt){_dt=true;document.body.style.filter='blur(12px)';}
-  else if(!t&&_dt){_dt=false;document.body.style.filter='';}
-},1000);
+if(window.matchMedia('(pointer:fine)').matches){
+  setInterval(()=>{
+    const t=window.outerWidth-window.innerWidth>160||window.outerHeight-window.innerHeight>160;
+    if(t&&!_dt){_dt=true;document.body.style.filter='blur(12px)';}
+    else if(!t&&_dt){_dt=false;document.body.style.filter='';}
+  },1000);
+}
 
 // ═══════════════════════════════════════
 // ADMIN AUTH
@@ -1528,7 +1533,7 @@ function apExportCSV() {
 // INIT
 // ═══════════════════════════════════════
 (function init(){
-  // Reset sesión en cada visita nueva
+  // Limpia datos de sesión anterior para forzar login en cada visita
   LS.del('churrearg_user');
   LS.del('churrearg_sid');
   LS.del('churrearg_recurrent');
@@ -1539,20 +1544,18 @@ function apExportCSV() {
 
   checkIntegrity();
   updateDropStats();
+
+  // Ocultar age-gate por defecto, mostrar vip-gate de entrada
   document.getElementById('age-gate').classList.add('hidden');
 
-  if(SS.get('churrearg_access')==='1' && SS.get('churrearg_age')==='1'){
-    initVIPSession();
-  } else if(SS.get('churrearg_vip_ok')==='1' && SS.get('churrearg_age')!=='1'){
-    showAgeGate();
-  } else {
-    showVipGate();
-  }
+  // Como reseteamos todo arriba, siempre arrancamos en el VIP gate
+  showVipGate();
 
+  // Levantar el page-cover con un pequeño delay para que el gate ya esté renderizado
   setTimeout(()=>{
     const c=document.getElementById("page-cover");
     if(c){c.classList.add("gone");setTimeout(()=>c.remove(),400);}
-  },50);
+  },100);
 })();
 </script>
 </body>
