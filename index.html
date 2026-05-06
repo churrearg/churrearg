@@ -9,13 +9,13 @@
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
 <style>
-#page-cover{position:fixed;inset:0;background:#000;z-index:99990;pointer-events:none;transition:opacity .4s ease;}
-#page-cover.gone{opacity:0;pointer-events:none;}
 
 :root{--black:#000;--gold:#C9A84C;--gl:#e8c96e;--gd:#9a7a30;--carbon:#1e1e1e;--smoke:#111;--text:#e8e8e8;--muted:#909090;}
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 html{scroll-behavior:smooth;}
 body{background:var(--black);color:var(--text);font-family:'Montserrat',sans-serif;font-weight:300;overflow-x:hidden;}
+/* Bloqueo de scroll mientras gates activos */
+body.locked{overflow:hidden;}
 
 /* ── CURSOR — desktop only ── */
 @media(pointer:fine){body{cursor:none;}}
@@ -27,7 +27,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
 /* ── AGE GATE ── */
 #age-gate{position:fixed;inset:0;z-index:99999;background:#000;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:32px 24px;text-align:center;}
-#age-gate.hidden{display:none;}
+#age-gate.hidden{display:none!important;}
 .ag-logo{font-family:'Cinzel',serif;font-size:clamp(22px,6vw,32px);font-weight:900;letter-spacing:.12em;background:linear-gradient(135deg,#e8c96e,#C9A84C,#9a7a30);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:28px;}
 .ag-line{width:36px;height:1px;background:rgba(201,168,76,.3);margin:0 auto 28px;}
 .ag-title{font-family:'Cinzel',serif;font-size:clamp(18px,5vw,28px);font-weight:700;color:#fff;line-height:1.2;margin-bottom:12px;}
@@ -475,13 +475,12 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
 }
 </style>
 </head>
-<body>
-<div id="page-cover"></div>
+<body class="locked">
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
 <!-- AGE GATE -->
-<div id="age-gate">
+<div id="age-gate" class="hidden">
   <div class="ag-logo">CHURREARG</div>
   <div class="ag-line"></div>
   <div class="ag-title">¿Tenés 18 años o más?</div>
@@ -495,7 +494,7 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
 </div>
 
 <!-- VIP LOGIN -->
-<div id="vip-gate">
+<div id="vip-gate" class="visible">
   <div class="vg-logo">CHURREARG</div>
   <div class="vg-drop">Collector's Drop #01</div>
   <div class="vg-title">Acceso por invitación</div>
@@ -562,11 +561,6 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
       <div class="vw-unit" id="vwUnit"></div>
     </div>
     <p class="vw-reserve"><strong>Ganaste el acceso.</strong> Lo que hagas con él es tuyo. La reserva se cierra exclusivamente por Instagram.</p>
-    <div class="vw-meta">
-      <div class="vw-chip">Session <span id="vwSid">—</span></div>
-      <div class="vw-chip">Tipo <span id="vwType">—</span></div>
-      <div class="vw-chip">Reserva <span id="vwTimer">10:00</span></div>
-    </div>
   </div>
 </div>
 
@@ -757,9 +751,15 @@ function checkIntegrity() {
 // ═══════════════════════════════════════
 function ageAllow() {
   SS.set('churrearg_age','1');
-  const g=document.getElementById('age-gate');
-  g.style.transition='opacity .6s ease'; g.style.opacity='0';
-  setTimeout(()=>{ g.classList.add('hidden'); initVIPSession(); }, 600);
+  const g = document.getElementById('age-gate');
+  g.style.transition = 'opacity .5s ease';
+  g.style.opacity = '0';
+  setTimeout(() => {
+    g.classList.add('hidden');
+    g.style.opacity = '';
+    g.style.transition = '';
+    initVIPSession();
+  }, 520);
 }
 function ageDeny() {
   document.getElementById('agBtns').style.display='none';
@@ -793,10 +793,11 @@ function submitVip() {
   const raw = document.getElementById('vipInput').value.toLowerCase().trim();
   const err = document.getElementById('vipError');
 
+  // Acceso admin
   if(raw === 'admin') {
     document.getElementById('vip-gate').classList.remove('visible');
     document.getElementById('admin-login').classList.add('visible');
-    setTimeout(()=>document.getElementById('alUser').focus(),100);
+    setTimeout(()=>{ const u=document.getElementById('alUser'); if(u)u.focus(); },100);
     return;
   }
 
@@ -817,6 +818,7 @@ function submitVip() {
     return;
   }
 
+  // Código válido — guardar datos
   const code = raw;
   LS.del('churrearg_attempts'); LS.del('churrearg_block_ts');
   const used = getUsedCodes();
@@ -828,16 +830,27 @@ function submitVip() {
   LS.set('churrearg_recurrent', isRecurrent ? '1' : '0');
   SS.set('churrearg_access', '1');
   SS.set('churrearg_session_start', Date.now().toString());
-  SS.set('churrearg_vip_ok','1');
   logEvent('login_success', code);
   updateDropStats();
 
-  showAgeGate();
+  // Transición: fade out vip-gate → mostrar age-gate
   const gate = document.getElementById('vip-gate');
-  setTimeout(()=>{
-    gate.style.transition='opacity .3s ease'; gate.style.opacity='0';
-    setTimeout(()=>{ gate.classList.remove('visible'); gate.style.opacity=''; gate.style.transition=''; }, 350);
-  }, 80);
+  gate.style.transition = 'opacity .35s ease';
+  gate.style.opacity = '0';
+  setTimeout(() => {
+    gate.classList.remove('visible');
+    gate.style.opacity = '';
+    gate.style.transition = '';
+    // Mostrar age-gate
+    const ag = document.getElementById('age-gate');
+    ag.style.opacity = '0';
+    ag.classList.remove('hidden');
+    requestAnimationFrame(() => {
+      ag.style.transition = 'opacity .35s ease';
+      ag.style.opacity = '1';
+      setTimeout(() => { ag.style.transition = ''; }, 400);
+    });
+  }, 370);
 }
 
 function showBlocked() {
@@ -865,53 +878,25 @@ document.addEventListener('keydown', e => {
 // ═══════════════════════════════════════
 // INIT VIP SESSION
 // ═══════════════════════════════════════
-function liftCover(){
-  const c=document.getElementById('page-cover');
-  if(c){c.classList.add('gone');setTimeout(()=>c.remove(),400);}
-}
-
 function initVIPSession() {
-  liftCover();
+  document.body.classList.remove('locked');
   const code = LS.get('churrearg_user');
   if(!code) return;
   const unit = getUnit(code);
   const vnum = getVIPNum(code);
-  const sid = LS.get('churrearg_sid') || '—';
-  const isRec = LS.get('churrearg_recurrent') === '1';
 
   document.getElementById('vwAccess').textContent = `Acceso confirmado — VIP ${vnum}`;
   document.getElementById('vwUnit').textContent = `Unidad ${unit}`;
-  document.getElementById('vwSid').textContent = sid;
-  document.getElementById('vwType').textContent = isRec ? 'Recurrente' : 'Nuevo';
   document.getElementById('vip-welcome').classList.add('visible');
-  startReserveTimer();
   document.getElementById('ctaWrap').classList.add('visible');
   document.getElementById('ctaLocked').style.display='none';
   document.getElementById('reserveBanner').classList.add('visible');
   document.getElementById('statusBar').classList.add('visible');
   updateDropStats();
 
-  // Mostrar FAB admin si está autenticado
   if(AP_STATE.auth){
     document.getElementById('admin-fab').style.display='flex';
   }
-}
-
-// ═══════════════════════════════════════
-// RESERVE TIMER
-// ═══════════════════════════════════════
-function startReserveTimer() {
-  const el = document.getElementById('vwTimer');
-  if(!el) return;
-  const end = Date.now() + CFG.RESERVE_TIME;
-  const tick = () => {
-    const rem = end - Date.now();
-    if(rem <= 0) { el.textContent = 'Expirada'; return; }
-    const m = Math.floor(rem/60000), s = Math.floor((rem%60000)/1000);
-    el.textContent = `${m}:${String(s).padStart(2,'0')}`;
-    setTimeout(tick,1000);
-  };
-  tick();
 }
 
 // ═══════════════════════════════════════
@@ -1545,17 +1530,8 @@ function apExportCSV() {
   checkIntegrity();
   updateDropStats();
 
-  // Ocultar age-gate por defecto, mostrar vip-gate de entrada
-  document.getElementById('age-gate').classList.add('hidden');
-
-  // Como reseteamos todo arriba, siempre arrancamos en el VIP gate
-  showVipGate();
-
-  // Levantar el page-cover con un pequeño delay para que el gate ya esté renderizado
-  setTimeout(()=>{
-    const c=document.getElementById("page-cover");
-    if(c){c.classList.add("gone");setTimeout(()=>c.remove(),400);}
-  },100);
+  // age-gate oculto, vip-gate visible desde el HTML — nada más que hacer
+  setTimeout(()=>{ const i=document.getElementById('vipInput'); if(i)i.focus(); }, 300);
 })();
 </script>
 </body>
