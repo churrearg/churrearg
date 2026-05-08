@@ -4,12 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Drop #01 · La Pegajosa — CHURREARG</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- SEO & Meta -->
+<meta name="description" content="CHURREARG Drop #01 — La Pegajosa Edition. 50 unidades numeradas. Sin reposición. Acceso por invitación.">
 <meta name="robots" content="noindex, nofollow">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta http-equiv="Referrer-Policy" content="no-referrer">
+<meta name="theme-color" content="#000000">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Drop #01 · La Pegajosa — CHURREARG">
+<meta property="og:description" content="50 unidades numeradas. Sin reposición. Acceso por invitación exclusiva.">
+<meta property="og:image" content="https://churrearg.github.io/og-image.jpg">
+<meta property="og:url" content="https://churrearg.github.io">
+<meta property="og:site_name" content="CHURREARG">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Drop #01 · La Pegajosa — CHURREARG">
+<meta name="twitter:description" content="50 unidades. Sin reposición. Acceso por invitación.">
+
+<!-- Favicon inline SVG -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23000'/><text y='72' x='50' text-anchor='middle' font-size='60' fill='%23C9A84C' font-family='serif' font-weight='900'>C</text></svg>">
+
+<!-- Fonts with display=swap -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
 <style>
 #page-cover{position:fixed;inset:0;background:#000;z-index:99993;pointer-events:none;transition:opacity .4s ease;}
 #page-cover.gone{opacity:0;pointer-events:none;}
@@ -22,14 +41,12 @@
   --carbon:#1e1e1e;
   --smoke:#111;
   --text:#e8e8e8;
-  /* FIX: muted subido de #666 a #909090 para mejor contraste */
   --muted:#909090;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 html{scroll-behavior:smooth;}
 body{background:var(--black);color:var(--text);font-family:'Montserrat',sans-serif;font-weight:300;overflow-x:hidden;cursor:none;}
 
-/* FIX: cursor none solo en dispositivos con mouse (pointer: fine) */
 @media (pointer: coarse) {
   body { cursor: auto; }
   .cursor, .cursor-ring { display: none; }
@@ -38,7 +55,7 @@ body{background:var(--black);color:var(--text);font-family:'Montserrat',sans-ser
 .cursor{width:10px;height:10px;background:var(--gold);border-radius:50%;position:fixed;pointer-events:none;z-index:2147483647;transform:translate(-50%,-50%);mix-blend-mode:difference;}
 .cursor-ring{width:34px;height:34px;border:1px solid rgba(201,168,76,.5);border-radius:50%;position:fixed;pointer-events:none;z-index:2147483646;transform:translate(-50%,-50%);transition:all .14s ease;}
 
-body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height%3D'100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:9990;opacity:.4;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:9990;opacity:.4;}
 
 /* ── AGE GATE ── */
 #age-gate{position:fixed;inset:0;z-index:99999;background:#000;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:32px 24px;text-align:center;}
@@ -46,7 +63,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .ag-logo{font-family:'Cinzel',serif;font-size:clamp(22px,6vw,32px);font-weight:900;letter-spacing:.12em;background:linear-gradient(135deg,#e8c96e,#C9A84C,#9a7a30);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:28px;}
 .ag-line{width:36px;height:1px;background:rgba(201,168,76,.3);margin:0 auto 28px;}
 .ag-title{font-family:'Cinzel',serif;font-size:clamp(18px,5vw,28px);font-weight:700;color:#fff;line-height:1.2;margin-bottom:12px;}
-/* FIX: ag-sub de #555 a #888 */
 .ag-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(13px,3vw,16px);color:#888;margin-bottom:36px;max-width:360px;line-height:1.7;}
 .ag-btns{display:flex;flex-direction:column;gap:12px;width:100%;max-width:300px;}
 .ag-btn{padding:18px 24px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:.4em;text-transform:uppercase;border:1px solid #C9A84C;background:transparent;color:#C9A84C;cursor:pointer;position:relative;overflow:hidden;transition:color .35s;}
@@ -54,41 +70,49 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .ag-btn:hover,.ag-btn:active{color:#000;}
 .ag-btn:hover::before,.ag-btn:active::before{transform:translateX(0);}
 .ag-btn span{position:relative;z-index:1;}
-/* FIX: ag-btn-no de #444 a #666 — más visible pero aún subordinado */
 .ag-btn-no{padding:18px 24px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:.4em;text-transform:uppercase;border:1px solid rgba(255,255,255,.15);background:transparent;color:#666;cursor:pointer;transition:color .2s;}
 .ag-btn-no:hover{color:#888;}
 .ag-deny{display:none;margin-top:44px;}
 .ag-deny.visible{display:block;}
-/* FIX: ag-deny-text de #444 a #777 */
 .ag-deny-text{font-family:'Playfair Display',serif;font-style:italic;font-size:16px;color:#777;line-height:1.7;}
-/* FIX: ag-legal de #2a2a2a a #444 */
 .ag-legal{position:absolute;bottom:18px;left:0;right:0;font-size:9px;letter-spacing:.18em;color:#444;text-transform:uppercase;text-align:center;padding:0 16px;}
 
 /* ── VIP LOGIN ── */
 #vip-gate{position:fixed;inset:0;z-index:99998;background:#000;cursor:none;display:none;align-items:center;justify-content:center;flex-direction:column;padding:32px 24px;text-align:center;}
 #vip-gate.visible{display:flex;}
-/* FIX: cursor none en mobile */
 @media (pointer: coarse) { #vip-gate { cursor: auto; } }
 .vg-logo{font-family:'Cinzel',serif;font-size:clamp(20px,5vw,28px);font-weight:900;letter-spacing:.14em;background:linear-gradient(135deg,#e8c96e,#C9A84C,#9a7a30);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;}
-/* FIX: vg-drop de rgba(201,168,76,.4) a rgba(201,168,76,.65) */
 .vg-drop{font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:rgba(201,168,76,.65);margin-bottom:32px;}
 .vg-title{font-family:'Cinzel',serif;font-size:clamp(18px,4vw,26px);font-weight:700;color:#fff;margin-bottom:10px;}
-/* FIX: vg-sub de #555 a #888 */
-.vg-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:#888;margin-bottom:36px;max-width:320px;line-height:1.7;}
+.vg-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:#888;margin-bottom:10px;max-width:320px;line-height:1.7;}
+/* FIX: hint debajo del subtítulo */
+.vg-hint{font-size:10px;letter-spacing:.2em;color:rgba(201,168,76,.45);margin-bottom:28px;text-transform:uppercase;}
 .vg-form{width:100%;max-width:300px;}
 .vg-input{width:100%;padding:16px 18px;background:#0a0a0a;border:1px solid rgba(201,168,76,.2);color:#e8e8e8;font-family:'Montserrat',sans-serif;font-size:13px;letter-spacing:.15em;text-align:center;outline:none;margin-bottom:10px;transition:border-color .3s;}
 .vg-input:focus{border-color:#C9A84C;}
-.vg-input::placeholder{color:#444;letter-spacing:.1em;}
+.vg-input::placeholder{color:rgba(201,168,76,.25);letter-spacing:.25em;}
 .vg-submit{width:100%;padding:16px 24px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:.4em;text-transform:uppercase;border:1px solid #C9A84C;background:transparent;color:#C9A84C;cursor:pointer;position:relative;overflow:hidden;transition:color .35s;margin-bottom:12px;}
 .vg-submit::before{content:'';position:absolute;inset:0;background:#C9A84C;transform:translateX(-101%);transition:transform .35s cubic-bezier(.77,0,.18,1);z-index:0;}
 .vg-submit:hover,.vg-submit:active{color:#000;}
 .vg-submit:hover::before,.vg-submit:active::before{transform:translateX(0);}
 .vg-submit span{position:relative;z-index:1;}
 .vg-error{font-size:11px;color:#e74c3c;letter-spacing:.1em;min-height:18px;margin-bottom:6px;}
-/* FIX: vg-attempts de #444 a #666 */
 .vg-attempts{font-size:10px;color:#666;letter-spacing:.08em;}
 .vg-blocked{font-size:12px;color:#e74c3c;margin-top:12px;line-height:1.6;display:none;}
 .vg-blocked.visible{display:block;}
+
+/* ── VIP RETURNING BANNER ── */
+#vip-returning{position:fixed;inset:0;z-index:99997;background:#000;display:none;align-items:center;justify-content:center;flex-direction:column;padding:32px 24px;text-align:center;}
+#vip-returning.visible{display:flex;}
+.vr-logo{font-family:'Cinzel',serif;font-size:clamp(18px,4vw,24px);font-weight:900;letter-spacing:.14em;background:linear-gradient(135deg,#e8c96e,#C9A84C,#9a7a30);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:24px;}
+.vr-unit{font-family:'Cinzel',serif;font-size:clamp(48px,15vw,110px);font-weight:900;line-height:1;background:linear-gradient(135deg,var(--gl),var(--gold),var(--gd));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;letter-spacing:-.02em;}
+.vr-title{font-family:'Cinzel',serif;font-size:clamp(14px,3vw,20px);font-weight:700;color:#fff;margin-bottom:8px;}
+.vr-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:#888;margin-bottom:32px;line-height:1.7;}
+.vr-btn{padding:16px 40px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:.4em;text-transform:uppercase;border:1px solid #C9A84C;background:transparent;color:#C9A84C;cursor:pointer;position:relative;overflow:hidden;transition:color .35s;}
+.vr-btn::before{content:'';position:absolute;inset:0;background:#C9A84C;transform:translateX(-101%);transition:transform .35s cubic-bezier(.77,0,.18,1);z-index:0;}
+.vr-btn:hover,.vr-btn:active{color:#000;}
+.vr-btn:hover::before,.vr-btn:active::before{transform:translateX(0);}
+.vr-btn span{position:relative;z-index:1;}
 
 /* ── VIP WELCOME BANNER ── */
 #vip-welcome{display:none;max-width:1000px;margin:0 auto;padding:0 clamp(16px,4vw,24px) clamp(12px,2vw,20px);}
@@ -99,7 +123,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 @keyframes pulseDot{0%,100%{opacity:1;}50%{opacity:.3;}}
 .vw-access{font-family:'Cinzel',serif;font-size:clamp(11px,2.5vw,14px);font-weight:700;color:#fff;letter-spacing:.08em;}
 .vw-unit{font-size:clamp(9px,1.8vw,11px);letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-left:auto;}
-/* FIX: vw-reserve de rgba(232,232,232,.5) a rgba(232,232,232,.7) */
 .vw-reserve{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(12px,2vw,14px);color:rgba(232,232,232,.7);line-height:1.6;}
 .vw-reserve strong{color:var(--gold);font-style:normal;font-weight:600;}
 .vw-meta{display:flex;gap:clamp(12px,3vw,24px);margin-top:12px;flex-wrap:wrap;}
@@ -109,7 +132,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .reserve-banner.visible{display:block;}
 .reserve-inner{border:1px solid rgba(201,168,76,.18);padding:clamp(14px,3vw,20px) clamp(16px,4vw,26px);display:flex;align-items:center;gap:14px;background:rgba(201,168,76,.02);}
 .reserve-dot{width:6px;height:6px;border-radius:50%;background:#C9A84C;flex-shrink:0;animation:pulseDot 2s ease-in-out infinite;}
-/* FIX: reserve-text de rgba(232,232,232,.5) a rgba(232,232,232,.7) */
 .reserve-text{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(12px,2vw,14px);color:rgba(232,232,232,.7);line-height:1.6;}
 .reserve-text strong{color:#C9A84C;font-style:normal;font-weight:600;}
 
@@ -117,9 +139,26 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .status-bar{display:none;max-width:1000px;margin:0 auto;padding:0 clamp(16px,4vw,24px) 0;}
 .status-bar.visible{display:flex;}
 .sb-inner{width:100%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(201,168,76,.1);padding:10px 0;gap:12px;flex-wrap:wrap;}
-/* FIX: sb-item de #444 a #777 — más legible */
 .sb-item{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#777;}
 .sb-item span{color:var(--gold);}
+
+/* ── SOLD OUT BANNER ── */
+#soldout-banner{display:none;max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,24px) clamp(16px,4vw,24px);}
+#soldout-banner.visible{display:block;}
+.so-inner{border:1px solid rgba(231,76,60,.25);padding:clamp(20px,3vw,28px) clamp(18px,4vw,30px);background:rgba(231,76,60,.03);text-align:center;}
+.so-title{font-family:'Cinzel',serif;font-size:clamp(16px,3vw,22px);font-weight:700;color:#e74c3c;letter-spacing:.08em;margin-bottom:8px;}
+.so-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(12px,2vw,15px);color:rgba(232,232,232,.6);line-height:1.7;}
+
+/* ── POST-LAUNCH BANNER ── */
+#launch-banner{display:none;max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,24px) clamp(16px,4vw,24px);}
+#launch-banner.visible{display:block;}
+.lb-inner{border:1px solid rgba(201,168,76,.4);padding:clamp(20px,3vw,32px) clamp(18px,4vw,36px);background:rgba(201,168,76,.05);text-align:center;position:relative;overflow:hidden;}
+.lb-inner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 50%,rgba(201,168,76,.08),transparent);}
+.lb-label{font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:rgba(201,168,76,.7);margin-bottom:12px;}
+.lb-title{font-family:'Cinzel',serif;font-size:clamp(20px,5vw,36px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:10px;position:relative;}
+.lb-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(13px,2vw,16px);color:rgba(232,232,232,.7);line-height:1.7;margin-bottom:24px;position:relative;}
+.lb-btn{display:inline-block;padding:16px 40px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:.4em;text-transform:uppercase;border:1px solid var(--gold);background:var(--gold);color:#000;text-decoration:none;position:relative;transition:all .3s;}
+.lb-btn:hover{background:transparent;color:var(--gold);}
 
 /* ── HERO ── */
 .hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;padding:80px 24px 60px;overflow:hidden;text-align:center;}
@@ -127,16 +166,11 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .smoke-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
 .sp{position:absolute;bottom:-100px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.045) 0%,transparent 70%);animation:spRise linear infinite;}
 @keyframes spRise{0%{transform:translateY(0) scale(.4);opacity:0;}10%{opacity:1;}90%{opacity:.15;}100%{transform:translateY(-110vh) translateX(20px) scale(2.5);opacity:0;}}
-/* FIX: hero-eyebrow — sin cambio, ya es gold a full */
 .hero-eyebrow{font-size:clamp(9px,2vw,11px);letter-spacing:.5em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:clamp(24px,4vw,36px);opacity:0;animation:fadeUp .7s ease .2s forwards;}
-/* FIX: hero-brand de rgba(201,168,76,.4) a rgba(201,168,76,.65) */
 .hero-brand{font-family:'Cinzel',serif;font-size:clamp(12px,2.5vw,20px);font-weight:400;letter-spacing:.4em;color:rgba(201,168,76,.65);text-transform:uppercase;margin-bottom:8px;opacity:0;animation:fadeUp .7s ease .35s forwards;}
-/* FIX: hero-presenta de --muted(#666) a #888 */
 .hero-presenta{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(13px,2vw,17px);color:#888;margin-bottom:16px;opacity:0;animation:fadeUp .7s ease .5s forwards;}
-/* FIX: hero-drop de rgba(201,168,76,.3) a rgba(201,168,76,.55) */
 .hero-drop{font-size:clamp(9px,1.5vw,11px);letter-spacing:.45em;text-transform:uppercase;color:rgba(201,168,76,.55);font-weight:600;margin-bottom:8px;opacity:0;animation:fadeUp .7s ease .6s forwards;}
 .hero-title{font-family:'Cinzel',serif;font-size:clamp(46px,16vw,140px);font-weight:900;line-height:.92;letter-spacing:-.02em;background:linear-gradient(135deg,var(--gl) 0%,var(--gold) 45%,var(--gd) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:0;animation:fadeUp 1s ease .75s forwards;position:relative;z-index:1;margin-bottom:16px;}
-/* FIX: hero-tagline de rgba(232,232,232,.35) a rgba(232,232,232,.6) */
 .hero-tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(13px,2.5vw,20px);color:rgba(232,232,232,.6);line-height:1.6;opacity:0;animation:fadeUp .7s ease 1s forwards;}
 .hero-line{width:1px;height:clamp(48px,7vw,70px);background:linear-gradient(to bottom,var(--gold),transparent);margin-top:clamp(36px,5vw,50px);opacity:0;animation:fadeUp .7s ease 1.2s forwards;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
@@ -146,7 +180,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .divider-line{flex:1;height:1px;background:rgba(201,168,76,.1);}
 .divider-sym{font-family:'Cinzel',serif;font-size:clamp(12px,2vw,16px);color:var(--gold);opacity:.28;}
 .section{padding:clamp(52px,7vw,88px) clamp(16px,4vw,24px);max-width:1000px;margin:0 auto;}
-/* FIX: sec-label font-size mínimo subido a 10px */
 .sec-label{font-size:clamp(10px,1.5vw,11px);letter-spacing:.4em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px;}
 .sec-title{font-family:'Cinzel',serif;font-size:clamp(20px,5.5vw,44px);font-weight:700;color:#fff;line-height:1.1;margin-bottom:clamp(24px,4vw,44px);}
 
@@ -154,33 +187,28 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .units-wrap{display:flex;align-items:center;justify-content:center;margin-bottom:clamp(24px,4vw,36px);}
 .units-block{display:flex;flex-direction:column;align-items:center;padding:0 clamp(16px,5vw,64px);}
 .units-num{font-family:'Cinzel',serif;font-size:clamp(52px,13vw,112px);font-weight:900;line-height:1;background:linear-gradient(135deg,var(--gl),var(--gold),var(--gd));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.03em;}
-/* FIX: units-sub de #666 a --muted(#909090) */
 .units-sub{font-size:clamp(10px,1.5vw,11px);letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-top:6px;font-weight:600;}
 .units-div-v{width:1px;height:clamp(60px,10vw,88px);background:rgba(201,168,76,.15);}
-/* FIX: units-desc de rgba(232,232,232,.3) a rgba(232,232,232,.6) */
 .units-desc{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(13px,2.5vw,18px);color:rgba(232,232,232,.6);max-width:460px;margin:0 auto clamp(22px,4vw,32px);line-height:1.7;text-align:center;}
-/* FIX: avail-status mínimo 11px */
 .avail-status{font-size:clamp(11px,1.8vw,12px);letter-spacing:.3em;text-transform:uppercase;margin-top:8px;font-weight:600;}
 .avail-high{color:#C9A84C;}.avail-mid{color:#f1c40f;}.avail-low{color:#e74c3c;}
 .bar-wrap{max-width:clamp(280px,60vw,460px);margin:0 auto;}
-/* FIX: bar-labels de --muted(#666) a #888 */
 .bar-labels{display:flex;justify-content:space-between;font-size:clamp(10px,1.5vw,11px);letter-spacing:.15em;text-transform:uppercase;color:#888;margin-bottom:8px;}
 .bar-track{width:100%;height:1px;background:rgba(201,168,76,.1);overflow:hidden;}
 .bar-fill{height:100%;background:linear-gradient(to right,var(--gd),var(--gl));transition:width 1s ease;}
-/* FIX: progress-label de #333 a #555 */
 .progress-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#555;margin-top:8px;text-align:right;}
 
 /* ── COUNTDOWN ── */
 .countdown{padding:clamp(52px,7vw,80px) clamp(16px,4vw,24px);max-width:1000px;margin:0 auto;text-align:center;border-top:1px solid rgba(201,168,76,.08);}
-/* FIX: cd-date de --muted(#666) a #909090 */
 .cd-date{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(13px,2.5vw,17px);color:var(--muted);margin-bottom:clamp(28px,5vw,46px);}
 .cd-grid{display:flex;justify-content:center;align-items:flex-start;}
 .cd-unit{display:flex;flex-direction:column;align-items:center;padding:0 clamp(6px,3vw,38px);}
 .cd-num{font-family:'Cinzel',serif;font-size:clamp(36px,10vw,90px);font-weight:900;line-height:1;color:#fff;letter-spacing:-.02em;transition:color .3s;}
 .cd-num.tick{color:var(--gl);}
-/* FIX: cd-label de 8px mínimo a 10px mínimo */
 .cd-label{font-size:clamp(10px,1.5vw,11px);letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-top:8px;font-weight:600;}
 .cd-sep{font-family:'Cinzel',serif;font-size:clamp(28px,8vw,68px);font-weight:900;color:rgba(201,168,76,.2);padding-top:3px;align-self:flex-start;}
+/* Post-launch countdown state */
+.cd-launched{font-family:'Cinzel',serif;font-size:clamp(18px,4vw,30px);font-weight:700;color:var(--gold);letter-spacing:.1em;padding:clamp(24px,4vw,40px) 0;}
 
 /* ── SPECS ── */
 .specs-section{padding:clamp(52px,7vw,80px) clamp(16px,4vw,24px);max-width:1000px;margin:0 auto;border-top:1px solid rgba(201,168,76,.08);}
@@ -188,25 +216,58 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 @media(max-width:540px){.specs-grid{grid-template-columns:1fr;}}
 .spec-row{display:flex;justify-content:space-between;align-items:center;padding:clamp(16px,2.5vw,20px) clamp(14px,2.5vw,22px);background:var(--smoke);border:1px solid rgba(201,168,76,.06);transition:border-color .3s,background .3s;}
 .spec-row:hover{border-color:rgba(201,168,76,.24);background:#161616;}
-/* FIX: spec-key de 8px mínimo a 10px + color de #666 a #888 */
 .spec-key{font-size:clamp(10px,1.5vw,11px);letter-spacing:.2em;text-transform:uppercase;color:#888;font-weight:600;}
 .spec-val{font-family:'Cinzel',serif;font-size:clamp(12px,2vw,14px);color:var(--gold);font-weight:700;letter-spacing:.04em;}
-.spec-val.blur{filter:blur(5px);transition:filter .4s;}
-.spec-val.blur:hover,.spec-val.blur:active{filter:blur(0);}
+
+/* FIX: spec blur con toggle click — sin filtro persiste en mobile */
+.spec-val.blurred{
+  filter:blur(5px);
+  cursor:pointer;
+  position:relative;
+  transition:filter .0s;
+  user-select:none;
+}
+.spec-val.blurred::after{
+  content:'';
+  position:absolute;
+  inset:-4px -8px;
+}
+/* Cypher reveal animation */
+@keyframes cypherReveal{
+  0%{filter:blur(6px);opacity:.4;}
+  30%{filter:blur(3px);opacity:.7;}
+  60%{filter:blur(1px);opacity:.9;}
+  100%{filter:blur(0);opacity:1;}
+}
+.spec-val.revealing{
+  animation:cypherReveal .45s ease forwards;
+}
+.spec-val.revealed{
+  filter:blur(0) !important;
+}
 
 /* ── ABOUT ── */
 .about-block{background:var(--carbon);border:1px solid rgba(201,168,76,.13);padding:clamp(24px,4vw,48px);position:relative;overflow:hidden;}
 .about-block::before{content:'01';position:absolute;right:clamp(12px,3vw,30px);top:clamp(10px,2vw,20px);font-family:'Cinzel',serif;font-size:clamp(60px,12vw,120px);font-weight:900;color:rgba(201,168,76,.04);line-height:1;pointer-events:none;}
-/* FIX: about-text de #999 a #aaa — más legible en párrafos */
 .about-text{font-size:clamp(13px,2.2vw,17px);line-height:1.9;color:#aaa;}
 .about-text strong{color:var(--gold);font-weight:600;}
 .about-text p{margin-bottom:14px;}
 .about-text p:last-child{margin-bottom:0;}
 
+/* ── UNIT BADGE ── */
+#unit-badge-section{display:none;max-width:1000px;margin:0 auto;padding:clamp(24px,4vw,40px) clamp(16px,4vw,24px);}
+#unit-badge-section.visible{display:block;}
+.ub-inner{border:1px solid rgba(201,168,76,.15);padding:clamp(20px,3vw,32px);background:rgba(201,168,76,.02);text-align:center;}
+.ub-label{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:rgba(201,168,76,.6);margin-bottom:20px;}
+#unit-badge-svg{max-width:260px;margin:0 auto 16px;display:block;cursor:pointer;transition:transform .3s ease,filter .3s ease;}
+#unit-badge-svg:hover{transform:scale(1.03);filter:drop-shadow(0 0 18px rgba(201,168,76,.3));}
+.ub-hint{font-family:'Playfair Display',serif;font-style:italic;font-size:12px;color:#555;letter-spacing:.05em;}
+.ub-download{margin-top:14px;padding:12px 28px;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;border:1px solid rgba(201,168,76,.3);background:transparent;color:rgba(201,168,76,.7);cursor:pointer;transition:all .3s;}
+.ub-download:hover{border-color:#C9A84C;color:#C9A84C;}
+
 /* ── CTA ── */
 .cta-section{padding:clamp(64px,9vw,100px) clamp(16px,4vw,24px);max-width:680px;margin:0 auto;text-align:center;border-top:1px solid rgba(201,168,76,.08);}
 .cta-title{font-family:'Cinzel',serif;font-size:clamp(24px,6vw,48px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:12px;}
-/* FIX: cta-sub de --muted(#666) a #909090 */
 .cta-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(13px,2.5vw,18px);color:var(--muted);margin-bottom:clamp(28px,5vw,44px);line-height:1.6;}
 .cta-wrap{display:none;}
 .cta-wrap.visible{display:block;}
@@ -215,21 +276,33 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .cta-btn:hover,.cta-btn:active{color:var(--black);}
 .cta-btn:hover::before,.cta-btn:active::before{transform:translateX(0);}
 .cta-btn span{position:relative;z-index:1;}
-/* FIX: cta-note de rgba(102,102,102,.5) a #666 */
 .cta-note{font-size:clamp(9px,1.5vw,11px);letter-spacing:.2em;color:#666;margin-top:18px;text-transform:uppercase;}
-/* FIX: cta-locked de #333 a #555 */
 .cta-locked{font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:#555;margin-top:12px;}
 
 /* ── FOOTER ── */
 footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;border-top:1px solid rgba(201,168,76,.08);}
 .footer-brand{font-family:'Cinzel',serif;font-size:clamp(16px,4vw,20px);font-weight:900;background:linear-gradient(135deg,var(--gl),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:.12em;margin-bottom:8px;}
-/* FIX: footer-sub de --muted(#666) a #909090 */
 .footer-sub{font-size:clamp(10px,1.5vw,11px);letter-spacing:.25em;color:var(--muted);text-transform:uppercase;}
-/* FIX: footer-micro de #222 a #555 — era invisible */
+/* FIX: footer-micro más visible, copy más poderoso en posición correcta */
+.footer-tagline{font-family:'Cinzel',serif;font-size:clamp(13px,2vw,16px);font-weight:700;color:rgba(201,168,76,.5);letter-spacing:.08em;margin-bottom:12px;}
 .footer-micro{font-size:10px;color:#555;letter-spacing:.12em;margin-top:8px;font-family:'Playfair Display',serif;font-style:italic;}
 
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
+
+/* ── EXIT INTENT ── */
+#exit-overlay{position:fixed;inset:0;z-index:99996;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;flex-direction:column;padding:32px 24px;text-align:center;backdrop-filter:blur(4px);}
+#exit-overlay.visible{display:flex;}
+.eo-logo{font-family:'Cinzel',serif;font-size:18px;font-weight:900;letter-spacing:.14em;background:linear-gradient(135deg,#e8c96e,#C9A84C,#9a7a30);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;}
+.eo-title{font-family:'Cinzel',serif;font-size:clamp(20px,5vw,32px);font-weight:700;color:#fff;line-height:1.2;margin-bottom:10px;}
+.eo-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:#888;margin-bottom:28px;line-height:1.7;max-width:300px;}
+.eo-btn{display:inline-block;padding:16px 40px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:.4em;text-transform:uppercase;border:1px solid #C9A84C;background:transparent;color:#C9A84C;text-decoration:none;position:relative;overflow:hidden;transition:color .35s;margin-bottom:16px;}
+.eo-btn::before{content:'';position:absolute;inset:0;background:#C9A84C;transform:translateX(-101%);transition:transform .35s cubic-bezier(.77,0,.18,1);z-index:0;}
+.eo-btn:hover,.eo-btn:active{color:#000;}
+.eo-btn:hover::before,.eo-btn:active::before{transform:translateX(0);}
+.eo-btn span{position:relative;z-index:1;}
+.eo-close{font-size:10px;letter-spacing:.2em;color:#333;cursor:pointer;text-transform:uppercase;transition:color .2s;}
+.eo-close:hover{color:#666;}
 
 /* ── ADMIN PANEL ── */
 #admin-panel{position:fixed;bottom:20px;right:20px;width:350px;cursor:none;max-height:500px;background:#0a0a0a;border:1px solid rgba(201,168,76,.25);z-index:99995;display:none;flex-direction:column;font-family:'Montserrat',sans-serif;font-size:12px;color:#ccc;box-shadow:0 8px 40px rgba(0,0,0,.9);transition:all .3s cubic-bezier(.77,0,.18,1);}
@@ -283,7 +356,7 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
 <div class="cursor-ring" id="cursorRing"></div>
 
 <!-- AGE GATE -->
-<div id="age-gate">
+<div id="age-gate" class="hidden">
   <div class="ag-logo">CHURREARG</div>
   <div class="ag-line"></div>
   <div class="ag-title">¿Tenés 18 años o más?</div>
@@ -302,13 +375,23 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
   <div class="vg-drop">Collector's Drop #01</div>
   <div class="vg-title">Acceso por invitación</div>
   <p class="vg-sub">No todos tienen esto.<br>Si lo tenés, sabés lo que significa.</p>
+  <div class="vg-hint">Ingresá tu código VIP</div>
   <div class="vg-form">
-    <input class="vg-input" id="vipInput" type="text" placeholder="" maxlength="5" autocomplete="off" spellcheck="false">
+    <input class="vg-input" id="vipInput" type="text" placeholder="vip••" maxlength="5" autocomplete="off" spellcheck="false">
     <div class="vg-error" id="vipError"></div>
     <button class="vg-submit" onclick="submitVip()"><span>Confirmar acceso</span></button>
     <div class="vg-attempts" id="vipAttempts"></div>
     <div class="vg-blocked" id="vipBlocked">Acceso bloqueado temporalmente.<br>Demasiados intentos fallidos.<br><span id="vipBlockTimer"></span></div>
   </div>
+</div>
+
+<!-- VIP RETURNING -->
+<div id="vip-returning">
+  <div class="vr-logo">CHURREARG</div>
+  <div class="vr-unit" id="vrUnit">#003</div>
+  <div class="vr-title" id="vrTitle">Bienvenido de vuelta</div>
+  <p class="vr-sub" id="vrSub">Tu acceso sigue activo.<br>La reserva espera.</p>
+  <button class="vr-btn" onclick="enterFromReturning()"><span>Entrar</span></button>
 </div>
 
 <!-- ADMIN LOGIN -->
@@ -340,6 +423,16 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
   <div id="ap-body"></div>
 </div>
 
+<!-- EXIT INTENT OVERLAY -->
+<div id="exit-overlay">
+  <div class="eo-logo">CHURREARG</div>
+  <div class="eo-title">¿Ya hablaste<br>con nosotros?</div>
+  <p class="eo-sub">50 unidades. El tiempo no espera.<br>La reserva es por DM.</p>
+  <a href="https://www.instagram.com/churrearg" target="_blank" class="eo-btn" onclick="closeExitOverlay()"><span>Ir a Instagram</span></a>
+  <div class="eo-close" onclick="closeExitOverlay()">No me interesa</div>
+</div>
+
+<!-- MAIN CONTENT -->
 <!-- HERO -->
 <div class="hero">
   <div class="smoke-bg" id="smokeBg"></div>
@@ -350,6 +443,16 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
   <h1 class="hero-title">La Pegajosa</h1>
   <p class="hero-tagline">Edición limitada. Numerado. Sin reposición.</p>
   <div class="hero-line"></div>
+</div>
+
+<!-- POST-LAUNCH BANNER (hidden until launch) -->
+<div id="launch-banner">
+  <div class="lb-inner">
+    <div class="lb-label">Drop #01 — La Pegajosa</div>
+    <div class="lb-title">El drop está activo.</div>
+    <p class="lb-sub">La ventana es ahora. Las unidades se están asignando.<br>Quien no actúa, pierde.</p>
+    <a href="https://www.instagram.com/churrearg" target="_blank" class="lb-btn">Reservar por Instagram</a>
+  </div>
 </div>
 
 <!-- VIP WELCOME -->
@@ -376,12 +479,68 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
   </div>
 </div>
 
+<!-- SOLD OUT BANNER -->
+<div id="soldout-banner">
+  <div class="so-inner">
+    <div class="so-title">Drop #01 Agotado</div>
+    <p class="so-sub">Las 50 unidades fueron asignadas.<br>Seguí <strong style="color:#C9A84C">@churrearg</strong> para ser el primero en enterarte del Drop #02.</p>
+  </div>
+</div>
+
+<!-- UNIT BADGE SECTION -->
+<div id="unit-badge-section">
+  <div class="ub-inner">
+    <div class="ub-label">Tu unidad asignada</div>
+    <svg id="unit-badge-svg" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" onclick="downloadBadge()">
+      <!-- background -->
+      <rect width="260" height="260" fill="#0A0A0A"/>
+      <!-- outer border -->
+      <rect x="8" y="8" width="244" height="244" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+      <!-- inner border -->
+      <rect x="16" y="16" width="228" height="228" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.15"/>
+      <!-- corner ornaments -->
+      <line x1="8" y1="8" x2="28" y2="8" stroke="#C9A84C" stroke-width="1" opacity="0.6"/>
+      <line x1="8" y1="8" x2="8" y2="28" stroke="#C9A84C" stroke-width="1" opacity="0.6"/>
+      <line x1="252" y1="8" x2="232" y2="8" stroke="#C9A84C" stroke-width="1" opacity="0.6"/>
+      <line x1="252" y1="8" x2="252" y2="28" stroke="#C9A84C" stroke-width="1" opacity="0.6"/>
+      <line x1="8" y1="252" x2="28" y2="252" stroke="#C9A84C" stroke-width="1" opacity="0.6"/>
+      <line x1="8" y1="252" x2="8" y2="232" stroke="#C9A84C" stroke-width="1" opacity="0.6"/>
+      <line x1="252" y1="252" x2="232" y2="252" stroke="#C9A84C" stroke-width="1" opacity="0.6"/>
+      <line x1="252" y1="252" x2="252" y2="232" stroke="#C9A84C" stroke-width="1" opacity="0.6"/>
+      <!-- brand -->
+      <text x="130" y="58" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#C9A84C" letter-spacing="6" opacity="0.9">CHURREARG</text>
+      <!-- divider -->
+      <line x1="60" y1="70" x2="200" y2="70" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>
+      <!-- drop label -->
+      <text x="130" y="92" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#C9A84C" letter-spacing="4" opacity="0.5">DROP #01</text>
+      <!-- unit number -->
+      <text id="badge-unit-num" x="130" y="168" text-anchor="middle" font-family="Georgia,serif" font-size="72" font-weight="bold" fill="url(#badgeGrad)" letter-spacing="-2">#001</text>
+      <!-- defs for gradient -->
+      <defs>
+        <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#e8c96e"/>
+          <stop offset="50%" stop-color="#C9A84C"/>
+          <stop offset="100%" stop-color="#9a7a30"/>
+        </linearGradient>
+      </defs>
+      <!-- divider bottom -->
+      <line x1="60" y1="185" x2="200" y2="185" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>
+      <!-- edition -->
+      <text x="130" y="206" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#C9A84C" letter-spacing="3" opacity="0.5">LA PEGAJOSA EDITION</text>
+      <!-- serial -->
+      <text id="badge-serial" x="130" y="228" text-anchor="middle" font-family="Georgia,serif" font-size="8" fill="#555" letter-spacing="2">EDICIÓN LIMITADA · 50 UNIDADES</text>
+    </svg>
+    <p class="ub-hint">Tocá para descargar tu certificado de unidad</p>
+    <button class="ub-download" onclick="downloadBadge()">Descargar PNG</button>
+  </div>
+</div>
+
 <!-- UNITS SECTION -->
 <div class="section reveal" style="text-align:center;">
   <div class="sec-label">Unidades Disponibles</div>
   <div class="units-wrap">
     <div class="units-block">
-      <div class="units-num" id="unitsCounter">0</div>
+      <div class="units-num" id="unitsCounter">—</div>
       <div class="units-sub">Unidades Disponibles</div>
     </div>
     <div class="units-div-v"></div>
@@ -403,8 +562,8 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
 <!-- COUNTDOWN -->
 <div class="countdown reveal">
   <div class="sec-label">Cuenta Regresiva al Lanzamiento</div>
-  <div class="cd-date">10 de Junio, 2026</div>
-  <div class="cd-grid">
+  <div class="cd-date" id="cdDateLabel">10 de Junio, 2026</div>
+  <div id="cd-live" class="cd-grid">
     <div class="cd-unit"><div class="cd-num" id="cdDays">00</div><div class="cd-label">Días</div></div>
     <div class="cd-sep">:</div>
     <div class="cd-unit"><div class="cd-num" id="cdHours">00</div><div class="cd-label">Horas</div></div>
@@ -412,6 +571,9 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
     <div class="cd-unit"><div class="cd-num" id="cdMins">00</div><div class="cd-label">Minutos</div></div>
     <div class="cd-sep">:</div>
     <div class="cd-unit"><div class="cd-num" id="cdSecs">00</div><div class="cd-label">Segundos</div></div>
+  </div>
+  <div id="cd-launched" class="cd-launched" style="display:none;">
+    El drop está activo. Las unidades se están asignando.
   </div>
 </div>
 
@@ -427,7 +589,7 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
     <div class="spec-row"><span class="spec-key">Numeración</span><span class="spec-val">#001 al #050</span></div>
     <div class="spec-row"><span class="spec-key">Reposición</span><span class="spec-val">No</span></div>
     <div class="spec-row"><span class="spec-key">Lanzamiento</span><span class="spec-val">10 de Junio, 2026</span></div>
-    <div class="spec-row"><span class="spec-key">Contenido</span><span class="spec-val blur">— — — — —</span></div>
+    <div class="spec-row"><span class="spec-key">Contenido</span><span class="spec-val blurred" id="specBlur" onclick="revealSpec(this)" title="Tocá para revelar">— — — — —</span></div>
   </div>
 </div>
 
@@ -440,7 +602,7 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
   <div class="about-block">
     <div class="about-text">
       <p><strong>La Pegajosa Edition</strong> está inspirada en perfiles aromáticos intensos, notas terrosas y una textura característica que destaca por su adherencia natural. Su esencia evoca experiencias profundas, relajadas y de alta pureza.</p>
-      <p>Un homenaje a una cultura que valora el detalle, la calidad extrema y las sensaciones auténticas. Diseñado para los que entienden que los accesorios no son un extra — son parte de la experiencia.</p>
+      <p>Un homenaje a una cultura que valora el detalle, la calidad extrema y las sensaciones auténticas. Diseñado para los que entienden que los accesorios no son un extra — son parte de la experiencia. <strong>Kit completo de accesorios premium</strong>, numerado, sin reposición.</p>
       <p><strong>CHURREARG™</strong> es una marca diseñada para quienes buscan experiencias premium, coleccionables y con identidad propia. Cada pieza combina arte, detalle y excelencia, manteniendo un estándar de diseño superior.</p>
     </div>
   </div>
@@ -465,13 +627,15 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
     <a href="https://www.instagram.com/churrearg" target="_blank" class="cta-btn" id="ctaBtn"><span>Escribinos por Instagram</span></a>
     <p class="cta-note">@churrearg · Solo por DM</p>
   </div>
-  <p class="cta-locked" id="ctaLocked">Este acceso no es para todos.</p>
+  <p class="cta-locked" id="ctaLocked" style="display:none;">Este acceso no es para todos.</p>
 </div>
 
 <footer>
   <div class="footer-brand">CHURREARG</div>
+  <!-- FIX: copy poderoso en posición visible -->
+  <div class="footer-tagline">Tener el acceso no es suficiente.<br>Hay que merecerlo.</div>
   <div class="footer-sub">Accesorio Premium · Buenos Aires · Argentina</div>
-  <div class="footer-micro">Tener el acceso no es suficiente. Hay que merecerlo.</div>
+  <div class="footer-micro">Producto coleccionable. CHURREARG™ no se responsabiliza por su uso.</div>
 </footer>
 
 <script>
@@ -482,10 +646,12 @@ const CFG = {
   TOTAL: 50,
   MAX_ATTEMPTS: 5,
   BLOCK_TIME: 5*60*1000,
-  RESERVE_TIME: 10*60*1000,
   LAUNCH: '2026-06-10T00:00:00-03:00',
   ADMIN_USER: 'admin',
-  ADMIN_PASS: 'churrearg2026'
+  ADMIN_PASS: 'churrearg2026',
+  // Simulación de movimiento orgánico de stock (1 unidad cada 8 horas desde launch)
+  DROP_START_TS: new Date('2026-05-16T00:00:00-03:00').getTime(),
+  ORGANIC_RATE_MS: 8 * 60 * 60 * 1000
 };
 
 const VALID = Array.from({length:50},(_,i)=>'vip'+String(i+1).padStart(2,'0'));
@@ -505,7 +671,7 @@ const SS = {
 };
 
 // ═══════════════════════════════════════
-// EVENT LOG
+// EVENTO LOG
 // ═══════════════════════════════════════
 function logEvent(type, detail='') {
   const evs = LS.get('churrearg_events') || [];
@@ -534,13 +700,29 @@ function getVIPNum(code) {
 }
 
 // ═══════════════════════════════════════
-// USED CODES / REMAINING
+// STOCK CON MOVIMIENTO ORGÁNICO SIMULADO
+// FIX: contador dinámico basado en tiempo
 // ═══════════════════════════════════════
+function getOrganicSold() {
+  const base = 23; // unidades vendidas base al inicio del drop
+  const elapsed = Date.now() - CFG.DROP_START_TS;
+  if(elapsed <= 0) return base;
+  const organic = Math.floor(elapsed / CFG.ORGANIC_RATE_MS);
+  return Math.min(base + organic, CFG.TOTAL);
+}
+
 function getUsedCodes() { return LS.get('churrearg_used') || []; }
-function getRemainingUnits() { return CFG.TOTAL - getUsedCodes().length; }
-function getProgress() { return Math.round((getUsedCodes().length/CFG.TOTAL)*100); }
+function getRemainingUnits() {
+  const realUsed = Math.max(getUsedCodes().length, getOrganicSold());
+  return Math.max(CFG.TOTAL - realUsed, 0);
+}
+function getProgress() {
+  const realUsed = Math.max(getUsedCodes().length, getOrganicSold());
+  return Math.round((Math.min(realUsed, CFG.TOTAL)/CFG.TOTAL)*100);
+}
 function getAvailStatus() {
   const r = getRemainingUnits();
+  if(r === 0) return ['Agotado','avail-low'];
   if(r > 30) return ['Disponibilidad limitada','avail-high'];
   if(r >= 10) return ['Alta demanda','avail-mid'];
   return ['Últimas unidades','avail-low'];
@@ -561,24 +743,154 @@ function checkIntegrity() {
 }
 
 // ═══════════════════════════════════════
+// WEB AUDIO — SOUND DESIGN
+// ═══════════════════════════════════════
+let _audioCtx = null;
+function getAudioCtx() {
+  if(!_audioCtx) _audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  return _audioCtx;
+}
+
+function playSound(type) {
+  try {
+    const ctx = getAudioCtx();
+    const gain = ctx.createGain();
+    gain.connect(ctx.destination);
+
+    if(type === 'access') {
+      // Acceso VIP confirmado — dos tonos ascendentes cálidos
+      [440, 660].forEach((freq, i) => {
+        const osc = ctx.createOscillator();
+        const g = ctx.createGain();
+        osc.connect(g); g.connect(ctx.destination);
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, ctx.currentTime + i * 0.18);
+        g.gain.setValueAtTime(0, ctx.currentTime + i * 0.18);
+        g.gain.linearRampToValueAtTime(0.07, ctx.currentTime + i * 0.18 + 0.02);
+        g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.18 + 0.35);
+        osc.start(ctx.currentTime + i * 0.18);
+        osc.stop(ctx.currentTime + i * 0.18 + 0.35);
+      });
+    }
+
+    else if(type === 'error') {
+      // Código inválido — tono bajo, seco, corto
+      const osc = ctx.createOscillator();
+      const g = ctx.createGain();
+      osc.connect(g); g.connect(ctx.destination);
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(200, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(120, ctx.currentTime + 0.12);
+      g.gain.setValueAtTime(0.06, ctx.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.14);
+      osc.start(); osc.stop(ctx.currentTime + 0.14);
+    }
+
+    else if(type === 'reveal') {
+      // Reveal de spec — sweep ascendente etéreo
+      const osc = ctx.createOscillator();
+      const g = ctx.createGain();
+      osc.connect(g); g.connect(ctx.destination);
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(300, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(900, ctx.currentTime + 0.4);
+      g.gain.setValueAtTime(0.04, ctx.currentTime);
+      g.gain.linearRampToValueAtTime(0.07, ctx.currentTime + 0.1);
+      g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.45);
+      osc.start(); osc.stop(ctx.currentTime + 0.45);
+    }
+
+    else if(type === 'click') {
+      // CTA click — click premium casi inaudible
+      const osc = ctx.createOscillator();
+      const g = ctx.createGain();
+      osc.connect(g); g.connect(ctx.destination);
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(1200, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(600, ctx.currentTime + 0.08);
+      g.gain.setValueAtTime(0.05, ctx.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.1);
+      osc.start(); osc.stop(ctx.currentTime + 0.1);
+    }
+
+    else if(type === 'tick') {
+      // Countdown tick sutil (solo en segundos finales si quisieras)
+      const osc = ctx.createOscillator();
+      const g = ctx.createGain();
+      osc.connect(g); g.connect(ctx.destination);
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(800, ctx.currentTime);
+      g.gain.setValueAtTime(0.02, ctx.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.05);
+      osc.start(); osc.stop(ctx.currentTime + 0.05);
+    }
+  } catch(e) {
+    // Audio no disponible — silencio sin romper
+  }
+}
+
+// ═══════════════════════════════════════
+// HAPTIC FEEDBACK (mobile)
+// ═══════════════════════════════════════
+function haptic(pattern = 10) {
+  if('vibrate' in navigator) navigator.vibrate(pattern);
+}
+
+// ═══════════════════════════════════════
 // AGE GATE
 // ═══════════════════════════════════════
 function ageAllow() {
   SS.set('churrearg_age','1');
-  const g=document.getElementById('age-gate');
-  g.style.transition='opacity .6s ease'; g.style.opacity='0';
-  setTimeout(()=>{ g.classList.add('hidden'); initVIPSession(); }, 600);
+  const g = document.getElementById('age-gate');
+  g.style.transition = 'opacity .6s ease';
+  g.style.opacity = '0';
+  setTimeout(() => {
+    g.classList.add('hidden');
+    liftCover();
+    initVIPSession();
+  }, 600);
 }
 function ageDeny() {
-  document.getElementById('agBtns').style.display='none';
+  document.getElementById('agBtns').style.display = 'none';
   document.getElementById('agDeny').classList.add('visible');
 }
 function showVipGate() {
   document.getElementById('vip-gate').classList.add('visible');
-  setTimeout(()=>document.getElementById('vipInput').focus(),200);
+  setTimeout(() => document.getElementById('vipInput').focus(), 200);
 }
 function showAgeGate() {
-  document.getElementById('age-gate').classList.remove('hidden');
+  const g = document.getElementById('age-gate');
+  g.style.opacity = '0';
+  g.classList.remove('hidden');
+  requestAnimationFrame(() => {
+    g.style.transition = 'opacity .4s ease';
+    g.style.opacity = '1';
+  });
+}
+
+// ═══════════════════════════════════════
+// VIP RETURNING — FIX: reconocimiento de usuario que vuelve
+// ═══════════════════════════════════════
+function showReturningGate(code) {
+  const unit = getUnit(code);
+  const vnum = getVIPNum(code);
+  document.getElementById('vrUnit').textContent = unit;
+  document.getElementById('vrTitle').textContent = `Bienvenido de vuelta, VIP ${vnum}`;
+  document.getElementById('vrSub').textContent = 'Tu acceso sigue activo.\nLa reserva espera.';
+  document.getElementById('vip-returning').classList.add('visible');
+}
+
+function enterFromReturning() {
+  playSound('access');
+  haptic(10);
+  const ret = document.getElementById('vip-returning');
+  ret.style.transition = 'opacity .3s ease';
+  ret.style.opacity = '0';
+  setTimeout(() => {
+    ret.classList.remove('visible');
+    ret.style.opacity = '';
+    showAgeGate();
+  }, 300);
 }
 
 // ═══════════════════════════════════════
@@ -592,7 +904,7 @@ function handleAttempts() {
   let attempts = parseInt(LS.get('churrearg_attempts')||0);
   const blockTs = LS.get('churrearg_block_ts');
   if(blockTs) {
-    const remaining = CFG.BLOCK_TIME - (Date.now()-blockTs);
+    const remaining = CFG.BLOCK_TIME - (Date.now() - blockTs);
     if(remaining > 0) return { blocked: true, remaining };
     LS.del('churrearg_block_ts');
     LS.del('churrearg_attempts');
@@ -604,29 +916,29 @@ function handleAttempts() {
 function submitVip() {
   const raw = document.getElementById('vipInput').value.toLowerCase().trim();
   const err = document.getElementById('vipError');
-  const blk = document.getElementById('vipBlocked');
-  const att = document.getElementById('vipAttempts');
 
   if(raw === 'admin') {
     document.getElementById('vip-gate').classList.remove('visible');
     document.getElementById('admin-login').classList.add('visible');
-    setTimeout(()=>document.getElementById('alUser').focus(),100);
+    setTimeout(() => document.getElementById('alUser').focus(), 100);
     return;
   }
 
-  const { blocked, remaining, attempts } = handleAttempts();
+  const { blocked, remaining } = handleAttempts();
   if(blocked) { showBlocked(remaining); return; }
 
   if(!validateCode(raw)) {
     const newAtt = (parseInt(LS.get('churrearg_attempts')||0)) + 1;
     LS.set('churrearg_attempts', newAtt);
     logEvent('login_fail', raw.trim());
+    playSound('error');
+    haptic([10, 50, 10]);
     if(newAtt >= CFG.MAX_ATTEMPTS) {
       LS.set('churrearg_block_ts', Date.now());
       showBlocked(CFG.BLOCK_TIME);
     } else {
       err.textContent = 'Código inválido';
-      att.textContent = `${newAtt}/${CFG.MAX_ATTEMPTS} intentos`;
+      document.getElementById('vipAttempts').textContent = `${newAtt}/${CFG.MAX_ATTEMPTS} intentos`;
     }
     return;
   }
@@ -639,24 +951,27 @@ function submitVip() {
   if(!used.includes(code)) { used.push(code); LS.set('churrearg_used', used); }
 
   const sid = generateSessionID(code);
-  const isRecurrent = LS.get('churrearg_user') === code;
+  // FIX: persistir usuario en localStorage para reconocimiento futuro
   LS.set('churrearg_user', code);
   LS.set('churrearg_sid', sid);
-  LS.set('churrearg_recurrent', isRecurrent ? '1' : '0');
+  LS.set('churrearg_recurrent', '0');
   SS.set('churrearg_access', '1');
   SS.set('churrearg_session_start', Date.now().toString());
   logEvent('login_success', code);
-  updateDropStats(true);
 
-  SS.set('churrearg_vip_ok','1');
+  playSound('access');
+  haptic(10);
 
-  showAgeGate();
+  // FIX: primero ocultar VIP gate, luego mostrar age gate — sin overlap
   const gate = document.getElementById('vip-gate');
-  setTimeout(()=>{
-    gate.style.transition='opacity .3s ease';
-    gate.style.opacity='0';
-    setTimeout(()=>{ gate.classList.remove('visible'); gate.style.opacity=''; gate.style.transition=''; }, 350);
-  }, 80);
+  gate.style.transition = 'opacity .3s ease';
+  gate.style.opacity = '0';
+  setTimeout(() => {
+    gate.classList.remove('visible');
+    gate.style.opacity = '';
+    gate.style.transition = '';
+    showAgeGate();
+  }, 320);
 }
 
 function showBlocked(ms) {
@@ -669,71 +984,69 @@ function showBlocked(ms) {
     if(rem <= 0) { blk.classList.remove('visible'); LS.del('churrearg_block_ts'); LS.del('churrearg_attempts'); return; }
     const m = Math.floor(rem/60000), s = Math.floor((rem%60000)/1000);
     timer.textContent = `Disponible en ${m}:${String(s).padStart(2,'0')}`;
-    setTimeout(tick,1000);
+    setTimeout(tick, 1000);
   };
   tick();
 }
 
 document.addEventListener('keydown', e => {
-  if(e.key==='Enter' && document.getElementById('vip-gate').classList.contains('visible')) submitVip();
+  if(e.key === 'Enter' && document.getElementById('vip-gate').classList.contains('visible')) submitVip();
+  if(e.ctrlKey && e.shiftKey && e.key === 'D') { e.preventDefault(); toggleAdmin(); }
 });
 
 // ═══════════════════════════════════════
-// INIT VIP SESSION
+// COVER LIFT
 // ═══════════════════════════════════════
-function liftCover(){
-  const c=document.getElementById('page-cover');
-  if(c){c.classList.add('gone');setTimeout(()=>c.remove(),400);}
+function liftCover() {
+  const c = document.getElementById('page-cover');
+  if(c) { c.classList.add('gone'); setTimeout(() => c.remove(), 400); }
 }
 
+// ═══════════════════════════════════════
+// INIT VIP SESSION — FIX: no borra usuario
+// ═══════════════════════════════════════
 function initVIPSession() {
-  liftCover();
   const code = LS.get('churrearg_user');
   if(!code) return;
+
   const unit = getUnit(code);
   const vnum = getVIPNum(code);
-  const sid = LS.get('churrearg_sid') || '—';
-  const isRec = LS.get('churrearg_recurrent') === '1';
 
   document.getElementById('vwAccess').textContent = `Acceso confirmado — VIP ${vnum}`;
   document.getElementById('vwUnit').textContent = `Unidad ${unit}`;
   document.getElementById('vip-welcome').classList.add('visible');
-
-  startReserveTimer();
-
   document.getElementById('ctaWrap').classList.add('visible');
-  document.getElementById('ctaLocked').style.display='none';
-
+  document.getElementById('ctaLocked').style.display = 'none';
   document.getElementById('reserveBanner').classList.add('visible');
-
   document.getElementById('statusBar').classList.add('visible');
-  updateDropStats(true);
-}
 
-// ═══════════════════════════════════════
-// RESERVE TIMER
-// ═══════════════════════════════════════
-function startReserveTimer() {
-  const el = document.getElementById('vwTimer');
-  if(!el) return;
-  let end = Date.now() + CFG.RESERVE_TIME;
-  const tick = () => {
-    const rem = end - Date.now();
-    if(rem <= 0) { el.textContent = 'Expirada'; return; }
-    const m = Math.floor(rem/60000), s = Math.floor((rem%60000)/1000);
-    el.textContent = `${m}:${String(s).padStart(2,'0')}`;
-    setTimeout(tick,1000);
-  };
-  tick();
+  // Unit badge
+  document.getElementById('unit-badge-section').classList.add('visible');
+  document.getElementById('badge-unit-num').textContent = unit;
+
+  // Check sold out
+  if(getRemainingUnits() === 0) {
+    document.getElementById('soldout-banner').classList.add('visible');
+    document.getElementById('ctaWrap').classList.remove('visible');
+    document.getElementById('ctaLocked').style.display = 'block';
+    document.getElementById('ctaLocked').textContent = 'Las 50 unidades ya fueron asignadas.';
+  }
+
+  // Check post-launch
+  if(Date.now() >= new Date(CFG.LAUNCH).getTime()) {
+    document.getElementById('launch-banner').classList.add('visible');
+  }
+
+  updateDropStats(true);
 }
 
 // ═══════════════════════════════════════
 // DROP STATS UI
 // ═══════════════════════════════════════
 function updateDropStats(instant = false) {
-  const used = getUsedCodes().length;
-  const rem = CFG.TOTAL - used;
+  const rem = getRemainingUnits();
   const pct = getProgress();
+  const used = CFG.TOTAL - rem;
   const [statusTxt, statusCls] = getAvailStatus();
 
   document.getElementById('sbAccess').textContent = `${used}/50`;
@@ -743,13 +1056,10 @@ function updateDropStats(instant = false) {
   document.getElementById('barPct').textContent = `${pct}% asignado`;
 
   const bar = document.getElementById('barFill');
-  if (instant) {
+  if(instant) {
     bar.style.transition = 'none';
     bar.style.width = pct + '%';
-    // Re-enable transition after paint so future updates animate
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      bar.style.transition = '';
-    }));
+    requestAnimationFrame(() => requestAnimationFrame(() => { bar.style.transition = ''; }));
   } else {
     bar.style.width = pct + '%';
   }
@@ -759,82 +1069,178 @@ function updateDropStats(instant = false) {
   as.className = 'avail-status ' + statusCls;
 
   document.getElementById('unitsDesc').textContent =
-    rem > 1 ? `Quedan ${rem} unidades disponibles.` : rem === 1 ? 'Queda 1 unidad disponible.' : 'Sin unidades disponibles.';
+    rem > 1 ? `Quedan ${rem} unidades disponibles.` :
+    rem === 1 ? 'Queda 1 unidad disponible.' :
+    'Sin unidades disponibles.';
 }
 
 // ═══════════════════════════════════════
-// COUNTDOWN
+// COUNTDOWN — FIX: estado post-launch
 // ═══════════════════════════════════════
 function updateCountdown() {
-  const diff = new Date(CFG.LAUNCH).getTime() - Date.now();
-  if(diff<=0) return;
-  const pad=n=>String(n).padStart(2,'0');
-  const s=document.getElementById('cdSecs');
-  s.textContent=pad(Math.floor((diff%60000)/1000));
-  s.classList.add('tick');setTimeout(()=>s.classList.remove('tick'),300);
-  document.getElementById('cdDays').textContent=pad(Math.floor(diff/86400000));
-  document.getElementById('cdHours').textContent=pad(Math.floor((diff%86400000)/3600000));
-  document.getElementById('cdMins').textContent=pad(Math.floor((diff%3600000)/60000));
+  const launchMs = new Date(CFG.LAUNCH).getTime();
+  const diff = launchMs - Date.now();
+
+  if(diff <= 0) {
+    // POST-LAUNCH STATE
+    document.getElementById('cd-live').style.display = 'none';
+    document.getElementById('cd-launched').style.display = 'block';
+    document.getElementById('cdDateLabel').style.display = 'none';
+    return;
+  }
+
+  const pad = n => String(n).padStart(2,'0');
+  const s = document.getElementById('cdSecs');
+  const newSec = pad(Math.floor((diff%60000)/1000));
+
+  if(s.textContent !== newSec) {
+    s.classList.add('tick');
+    setTimeout(() => s.classList.remove('tick'), 300);
+  }
+
+  s.textContent = newSec;
+  document.getElementById('cdDays').textContent = pad(Math.floor(diff/86400000));
+  document.getElementById('cdHours').textContent = pad(Math.floor((diff%86400000)/3600000));
+  document.getElementById('cdMins').textContent = pad(Math.floor((diff%3600000)/60000));
 }
-updateCountdown(); setInterval(updateCountdown,1000);
+updateCountdown();
+setInterval(updateCountdown, 1000);
 
 // ═══════════════════════════════════════
-// UNITS COUNTER ANIMATION
+// SPEC BLUR — FIX: toggle con click, cypher reveal animation
 // ═══════════════════════════════════════
-function animCount(el,target,dur){
-  let s=0;const step=ts=>{if(!s)s=ts;const p=Math.min((ts-s)/dur,1);el.textContent=Math.floor((1-Math.pow(1-p,3))*target);if(p<1)requestAnimationFrame(step);else el.textContent=target;};requestAnimationFrame(step);
+function revealSpec(el) {
+  if(el.classList.contains('revealed')) return;
+  playSound('reveal');
+  haptic(8);
+  el.classList.remove('blurred');
+  el.classList.add('revealing');
+  el.textContent = 'Kit Premium de Accesorios';
+  setTimeout(() => {
+    el.classList.remove('revealing');
+    el.classList.add('revealed');
+  }, 450);
+}
+
+// ═══════════════════════════════════════
+// UNITS COUNTER ANIMATION — FIX: empieza desde valor real
+// ═══════════════════════════════════════
+function animCount(el, target, dur) {
+  const start = target; // FIX: mostrar valor correcto inmediatamente, luego animar
+  el.textContent = start;
+  let s = 0;
+  const from = Math.max(0, target - 8); // anima los últimos 8 unidades
+  const step = ts => {
+    if(!s) s = ts;
+    const p = Math.min((ts-s)/dur, 1);
+    el.textContent = Math.floor(from + (1 - Math.pow(1-p, 3)) * (target - from));
+    if(p < 1) requestAnimationFrame(step);
+    else el.textContent = target;
+  };
+  requestAnimationFrame(step);
 }
 
 // ═══════════════════════════════════════
 // SCROLL REVEAL
 // ═══════════════════════════════════════
-const obs=new IntersectionObserver(es=>es.forEach(e=>{
-  if(e.isIntersecting){
+const obs = new IntersectionObserver(es => es.forEach(e => {
+  if(e.isIntersecting) {
     e.target.classList.add('visible');
-    const uc=e.target.querySelector('#unitsCounter');
-    if(uc) animCount(uc, getRemainingUnits(), 1400);
+    const uc = e.target.querySelector('#unitsCounter');
+    if(uc) animCount(uc, getRemainingUnits(), 900);
     obs.unobserve(e.target);
   }
-}),{threshold:0.08});
-document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+}), { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
 
 // ═══════════════════════════════════════
-// CTA CLICK LOG
+// CTA CLICK LOG + SOUND
 // ═══════════════════════════════════════
-document.getElementById('ctaBtn').addEventListener('click',()=>logEvent('cta_click'));
+document.getElementById('ctaBtn').addEventListener('click', () => {
+  logEvent('cta_click');
+  playSound('click');
+});
 
 // ═══════════════════════════════════════
 // CURSOR
 // ═══════════════════════════════════════
-const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
-let mx=0,my=0,rx=0,ry=0;
+const cursor = document.getElementById('cursor'), ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
 if(cursor && ring) {
-  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
-  (function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx+'px'; cursor.style.top = my+'px'; });
+  (function a() { rx += (mx-rx)*.12; ry += (my-ry)*.12; ring.style.left = rx+'px'; ring.style.top = ry+'px'; requestAnimationFrame(a); })();
 }
 
 // ═══════════════════════════════════════
-// SMOKE
+// SMOKE BG
 // ═══════════════════════════════════════
-const bg=document.getElementById('smokeBg');
-for(let i=0;i<9;i++){const p=document.createElement('div');p.classList.add('sp');const s=80+Math.random()*200;p.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;animation-duration:${9+Math.random()*12}s;animation-delay:${Math.random()*10}s;`;bg.appendChild(p);}
+const bg = document.getElementById('smokeBg');
+for(let i = 0; i < 9; i++) {
+  const p = document.createElement('div');
+  p.classList.add('sp');
+  const s = 80 + Math.random()*200;
+  p.style.cssText = `width:${s}px;height:${s}px;left:${Math.random()*100}%;animation-duration:${9+Math.random()*12}s;animation-delay:${Math.random()*10}s;`;
+  bg.appendChild(p);
+}
 
 // ═══════════════════════════════════════
 // SECURITY
 // ═══════════════════════════════════════
-document.addEventListener('contextmenu',e=>e.preventDefault());
-document.addEventListener('keydown',e=>{
-  if(e.key==='F12'){e.preventDefault();}
-  if(e.ctrlKey&&e.shiftKey&&['I','J','C','U'].includes(e.key)){e.preventDefault();}
-  if(e.ctrlKey&&['U','S'].includes(e.key)){e.preventDefault();}
-  if(e.ctrlKey&&e.shiftKey&&e.key==='D'){e.preventDefault();toggleAdmin();}
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('keydown', e => {
+  if(e.key === 'F12') e.preventDefault();
+  if(e.ctrlKey && e.shiftKey && ['I','J','C','U'].includes(e.key)) e.preventDefault();
+  if(e.ctrlKey && ['U','S'].includes(e.key)) e.preventDefault();
 });
-let _dt=false;
-setInterval(()=>{
-  const t=window.outerWidth-window.innerWidth>160||window.outerHeight-window.innerHeight>160;
-  if(t&&!_dt){_dt=true;document.body.style.filter='blur(12px)';}
-  else if(!t&&_dt){_dt=false;document.body.style.filter='';}
-},1000);
+let _dt = false;
+setInterval(() => {
+  const t = window.outerWidth - window.innerWidth > 160 || window.outerHeight - window.innerHeight > 160;
+  if(t && !_dt) { _dt = true; document.body.style.filter = 'blur(12px)'; }
+  else if(!t && _dt) { _dt = false; document.body.style.filter = ''; }
+}, 1000);
+
+// ═══════════════════════════════════════
+// EXIT INTENT — Desktop only, 1 vez por sesión
+// ═══════════════════════════════════════
+let _exitShown = false;
+document.addEventListener('mouseleave', e => {
+  if(e.clientY <= 0 && !_exitShown && SS.get('churrearg_access') === '1') {
+    _exitShown = true;
+    SS.set('churrearg_exit_shown', '1');
+    document.getElementById('exit-overlay').classList.add('visible');
+  }
+});
+function closeExitOverlay() {
+  document.getElementById('exit-overlay').classList.remove('visible');
+}
+
+// ═══════════════════════════════════════
+// UNIT BADGE DOWNLOAD
+// ═══════════════════════════════════════
+function downloadBadge() {
+  const svg = document.getElementById('unit-badge-svg');
+  const serializer = new XMLSerializer();
+  const svgStr = serializer.serializeToString(svg);
+  const canvas = document.createElement('canvas');
+  canvas.width = 520; canvas.height = 520;
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#0A0A0A';
+  ctx.fillRect(0, 0, 520, 520);
+  const img = new Image();
+  const blob = new Blob([svgStr], {type: 'image/svg+xml;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  img.onload = () => {
+    ctx.drawImage(img, 0, 0, 520, 520);
+    URL.revokeObjectURL(url);
+    const a = document.createElement('a');
+    const code = LS.get('churrearg_user') || 'vip00';
+    a.download = `churrearg-${getUnit(code).replace('#','')}.png`;
+    a.href = canvas.toDataURL('image/png');
+    a.click();
+    logEvent('badge_download', code);
+  };
+  img.src = url;
+}
 
 // ═══════════════════════════════════════
 // ADMIN AUTH
@@ -845,7 +1251,7 @@ function toggleAdmin() {
   if(!AP_STATE.auth) {
     const al = document.getElementById('admin-login');
     al.classList.toggle('visible');
-    if(al.classList.contains('visible')) setTimeout(()=>document.getElementById('alUser').focus(),100);
+    if(al.classList.contains('visible')) setTimeout(() => document.getElementById('alUser').focus(), 100);
   } else {
     AP_STATE.visible = !AP_STATE.visible;
     document.getElementById('admin-panel').classList.toggle('visible', AP_STATE.visible);
@@ -857,7 +1263,7 @@ function adminLogin() {
   const u = document.getElementById('alUser').value;
   const p = document.getElementById('alPass').value;
   const err = document.getElementById('alError');
-  if(u===CFG.ADMIN_USER && p===CFG.ADMIN_PASS) {
+  if(u === CFG.ADMIN_USER && p === CFG.ADMIN_PASS) {
     AP_STATE.auth = true;
     document.getElementById('admin-login').classList.remove('visible');
     AP_STATE.visible = true;
@@ -865,32 +1271,32 @@ function adminLogin() {
     apRender();
   } else {
     err.textContent = 'Credenciales incorrectas';
-    setTimeout(()=>err.textContent='', 2000);
+    setTimeout(() => err.textContent = '', 2000);
   }
 }
-document.getElementById('alPass').addEventListener('keydown',e=>{ if(e.key==='Enter') adminLogin(); });
+document.getElementById('alPass').addEventListener('keydown', e => { if(e.key === 'Enter') adminLogin(); });
 
-function apClose() { AP_STATE.visible=false; document.getElementById('admin-panel').classList.remove('visible'); }
+function apClose() { AP_STATE.visible = false; document.getElementById('admin-panel').classList.remove('visible'); }
 function apMin() {
-  if(AP_STATE.maximized){ apMax(); return; }
-  AP_STATE.minimized=!AP_STATE.minimized;
-  document.getElementById('admin-panel').classList.toggle('minimized',AP_STATE.minimized);
+  if(AP_STATE.maximized) { apMax(); return; }
+  AP_STATE.minimized = !AP_STATE.minimized;
+  document.getElementById('admin-panel').classList.toggle('minimized', AP_STATE.minimized);
   document.getElementById('apMinBtn').textContent = AP_STATE.minimized ? '▢' : '—';
 }
 function apMax() {
-  AP_STATE.maximized=!AP_STATE.maximized;
-  AP_STATE.minimized=false;
-  const panel=document.getElementById('admin-panel');
-  panel.classList.toggle('maximized',AP_STATE.maximized);
+  AP_STATE.maximized = !AP_STATE.maximized;
+  AP_STATE.minimized = false;
+  const panel = document.getElementById('admin-panel');
+  panel.classList.toggle('maximized', AP_STATE.maximized);
   panel.classList.remove('minimized');
   document.getElementById('apMaxBtn').textContent = AP_STATE.maximized ? '⤡' : '⤢';
   document.getElementById('apMinBtn').textContent = '—';
   apRender();
 }
-function apLogout() { AP_STATE.auth=false; apClose(); AP_STATE.maximized=false; document.getElementById('admin-panel').classList.remove('maximized'); }
-function apTab(el,name) {
-  AP_STATE.tab=name;
-  document.querySelectorAll('.ap-tab').forEach(t=>t.classList.remove('active'));
+function apLogout() { AP_STATE.auth = false; apClose(); AP_STATE.maximized = false; document.getElementById('admin-panel').classList.remove('maximized'); }
+function apTab(el, name) {
+  AP_STATE.tab = name;
+  document.querySelectorAll('.ap-tab').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
   apRender();
 }
@@ -907,8 +1313,8 @@ function apSessionTime() {
 function apRender() {
   const body = document.getElementById('ap-body');
   if(!body) return;
-  const used = getUsedCodes().length;
-  const rem = CFG.TOTAL - used;
+  const rem = getRemainingUnits();
+  const used = CFG.TOTAL - rem;
   const pct = getProgress();
   const [stTxt, stCls] = getAvailStatus();
   const stColor = stCls==='avail-high'?'gold':stCls==='avail-mid'?'yellow':'red';
@@ -916,10 +1322,11 @@ function apRender() {
   const totalLogins = evs.filter(e=>e.type==='login_success').length;
   const totalFails  = evs.filter(e=>e.type==='login_fail').length;
   const totalCTA    = evs.filter(e=>e.type==='cta_click').length;
+  const totalBadge  = evs.filter(e=>e.type==='badge_download').length;
   const ratio = (totalLogins+totalFails)>0 ? Math.round((totalLogins/(totalLogins+totalFails))*100)+'%' : '—';
   const isMax = AP_STATE.maximized;
 
-  if(AP_STATE.tab==='overview') {
+  if(AP_STATE.tab === 'overview') {
     body.innerHTML = `
       ${isMax ? `<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px;">
         <div style="background:#111;border:1px solid rgba(201,168,76,.12);padding:16px;text-align:center;">
@@ -937,7 +1344,7 @@ function apRender() {
       </div>` : ''}
       <div class="ap-sub">Stock</div>
       <div class="ap-row"><span class="ap-key">Total unidades</span><span class="ap-val gold">50</span></div>
-      <div class="ap-row"><span class="ap-key">Usadas</span><span class="ap-val">${used}</span></div>
+      <div class="ap-row"><span class="ap-key">Usadas (orgánico)</span><span class="ap-val">${used}</span></div>
       <div class="ap-row"><span class="ap-key">Restantes</span><span class="ap-val green">${rem}</span></div>
       <div class="ap-row"><span class="ap-key">Progreso</span><span class="ap-val">${pct}%</span></div>
       <div class="ap-prog"><div class="ap-prog-fill" style="width:${pct}%"></div></div>
@@ -946,6 +1353,7 @@ function apRender() {
       <div class="ap-row"><span class="ap-key">Accesos totales</span><span class="ap-val">${totalLogins}</span></div>
       <div class="ap-row"><span class="ap-key">Intentos fallidos</span><span class="ap-val red">${totalFails}</span></div>
       <div class="ap-row"><span class="ap-key">CTA clicks</span><span class="ap-val gold">${totalCTA}</span></div>
+      <div class="ap-row"><span class="ap-key">Badge downloads</span><span class="ap-val gold">${totalBadge}</span></div>
       ${isMax ? `
       <div class="ap-sub">Códigos VIP usados</div>
       <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:4px;">
@@ -958,14 +1366,14 @@ function apRender() {
     `;
   }
 
-  else if(AP_STATE.tab==='usuario') {
+  else if(AP_STATE.tab === 'usuario') {
     const code = LS.get('churrearg_user')||'—';
     const sid  = LS.get('churrearg_sid')||'—';
-    const acc  = SS.get('churrearg_access')==='1';
-    const rec  = LS.get('churrearg_recurrent')==='1';
-    const unit = code!=='—'?getUnit(code):'—';
-    const vnum = code!=='—'?getVIPNum(code):'—';
-    const userEvs = evs.slice(0,isMax?20:5);
+    const acc  = SS.get('churrearg_access') === '1';
+    const rec  = LS.get('churrearg_recurrent') === '1';
+    const unit = code !== '—' ? getUnit(code) : '—';
+    const vnum = code !== '—' ? getVIPNum(code) : '—';
+    const userEvs = evs.slice(0, isMax ? 20 : 5);
     body.innerHTML = `
       ${isMax ? `<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">
         <div style="background:#111;border:1px solid rgba(201,168,76,.12);padding:14px;">
@@ -992,16 +1400,13 @@ function apRender() {
         ${userEvs.map(e=>`<div class="ap-ev"><span class="ap-ev-t">${e.ts}</span><span class="ap-ev-k">${e.type}</span>${e.detail?` <span class="ap-ev-d">${e.detail}</span>`:''}</div>`).join('')||'<div style="color:#333;font-size:10px">Sin eventos</div>'}
       </div>`;
     if(AP_STATE.chartInterval) clearInterval(AP_STATE.chartInterval);
-    AP_STATE.chartInterval = setInterval(()=>{ const el=document.getElementById('apST'); if(el) el.textContent=apSessionTime(); else clearInterval(AP_STATE.chartInterval); },1000);
+    AP_STATE.chartInterval = setInterval(() => { const el = document.getElementById('apST'); if(el) el.textContent = apSessionTime(); else clearInterval(AP_STATE.chartInterval); }, 1000);
   }
 
-  else if(AP_STATE.tab==='analitica') {
-    const loginEvs = evs.filter(e=>e.type==='login_success');
-    const failEvs  = evs.filter(e=>e.type==='login_fail');
-    const ctaEvs   = evs.filter(e=>e.type==='cta_click');
+  else if(AP_STATE.tab === 'analitica') {
     const attempts = parseInt(LS.get('churrearg_attempts')||0);
     const isBlocked = !!LS.get('churrearg_block_ts');
-
+    const totalBadgeD = evs.filter(e=>e.type==='badge_download').length;
     body.innerHTML = `
       ${isMax ? `
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px;">
@@ -1033,17 +1438,13 @@ function apRender() {
             return `<div style="flex:1;background:${col};height:${h}px;opacity:.8;" title="${ev.type} ${ev.ts}"></div>`;
           }).join('')}
         </div>
-        <div style="display:flex;justify-content:space-between;margin-top:6px;">
-          <span style="font-size:8px;color:#222;">−20 eventos</span>
-          <span style="font-size:8px;color:#222;">ahora</span>
-        </div>
-      </div>
-      ` : ''}
+      </div>` : ''}
       <div class="ap-sub">Métricas</div>
       <div class="ap-row"><span class="ap-key">Total logins</span><span class="ap-val">${totalLogins}</span></div>
       <div class="ap-row"><span class="ap-key">Fallos</span><span class="ap-val red">${totalFails}</span></div>
       <div class="ap-row"><span class="ap-key">Ratio éxito</span><span class="ap-val green">${ratio}</span></div>
       <div class="ap-row"><span class="ap-key">CTA clicks</span><span class="ap-val gold">${totalCTA}</span></div>
+      <div class="ap-row"><span class="ap-key">Badge downloads</span><span class="ap-val gold">${totalBadgeD}</span></div>
       <div class="ap-row"><span class="ap-key">Intentos fallidos activos</span><span class="ap-val ${attempts>=CFG.MAX_ATTEMPTS?'red':'yellow'}">${attempts}/${CFG.MAX_ATTEMPTS}</span></div>
       <div class="ap-row"><span class="ap-key">Estado de bloqueo</span><span class="ap-val ${isBlocked?'red':'green'}">${isBlocked?'Bloqueado':'Libre'}</span></div>
       <div class="ap-row"><span class="ap-key">Eventos totales</span><span class="ap-val">${evs.length}</span></div>
@@ -1053,7 +1454,7 @@ function apRender() {
       </div>`;
   }
 
-  else if(AP_STATE.tab==='sim') {
+  else if(AP_STATE.tab === 'sim') {
     const simStock = SS.get('ap_sim_stock')||'alto';
     const simSes   = SS.get('ap_sim_ses')||'nueva';
     body.innerHTML = `
@@ -1073,7 +1474,7 @@ function apRender() {
     `;
   }
 
-  else if(AP_STATE.tab==='ctrl') {
+  else if(AP_STATE.tab === 'ctrl') {
     body.innerHTML = `
       <div class="ap-sub">Acciones</div>
       <button class="ap-cbtn" onclick="apCtrl('reset_ses')">↺ Reset sesión actual</button>
@@ -1093,91 +1494,92 @@ function apRender() {
 
 function apSimUser() {
   const code = document.getElementById('apVipSel').value;
-  const used = getUsedCodes(); if(!used.includes(code)){used.push(code);LS.set('churrearg_used',used);}
-  LS.set('churrearg_user',code);
-  LS.set('churrearg_sid',generateSessionID(code));
-  SS.set('churrearg_access','1');
-  SS.set('churrearg_session_start',Date.now().toString());
-  logEvent('sim_user',code);
-  initVIPSession(); apRender();
+  const used = getUsedCodes();
+  if(!used.includes(code)) { used.push(code); LS.set('churrearg_used', used); }
+  LS.set('churrearg_user', code);
+  LS.set('churrearg_sid', generateSessionID(code));
+  SS.set('churrearg_access', '1');
+  SS.set('churrearg_session_start', Date.now().toString());
+  logEvent('sim_user', code);
+  initVIPSession();
+  apRender();
 }
 function apSetStock(l) {
-  SS.set('ap_sim_stock',l);
-  const n={alto:3,medio:25,bajo:45}[l];
-  const codes = Array.from({length:n},(_,i)=>'vip'+String(i+1).padStart(2,'0'));
-  LS.set('churrearg_used',codes);
-  updateDropStats(); apRender();
+  SS.set('ap_sim_stock', l);
+  const n = {alto:3, medio:25, bajo:45}[l];
+  const codes = Array.from({length:n}, (_,i) => 'vip'+String(i+1).padStart(2,'0'));
+  LS.set('churrearg_used', codes);
+  updateDropStats();
+  apRender();
 }
 function apSetSes(s) {
-  SS.set('ap_sim_ses',s);
-  LS.set('churrearg_recurrent',s==='recurrente'?'1':'0');
+  SS.set('ap_sim_ses', s);
+  LS.set('churrearg_recurrent', s === 'recurrente' ? '1' : '0');
   apRender();
 }
 function apCtrl(action) {
-  if(action==='reset_ses'){SS.del('churrearg_access');SS.del('churrearg_session_start');logEvent('admin_reset_ses');}
-  else if(action==='reset_att'){LS.del('churrearg_attempts');LS.del('churrearg_block_ts');logEvent('admin_reset_att');}
-  else if(action==='reset_codes'){LS.del('churrearg_used');updateDropStats();logEvent('admin_reset_codes');}
-  else if(action==='clear_events'){LS.del('churrearg_events');logEvent('admin_clear_evs');}
-  else if(action==='clear_ls'){localStorage.clear();logEvent('admin_clear_ls');}
-  else if(action==='force_logout'){sessionStorage.clear();setTimeout(()=>location.reload(),300);}
+  if(action === 'reset_ses') { SS.del('churrearg_access'); SS.del('churrearg_session_start'); logEvent('admin_reset_ses'); }
+  else if(action === 'reset_att') { LS.del('churrearg_attempts'); LS.del('churrearg_block_ts'); logEvent('admin_reset_att'); }
+  else if(action === 'reset_codes') { LS.del('churrearg_used'); updateDropStats(); logEvent('admin_reset_codes'); }
+  else if(action === 'clear_events') { LS.del('churrearg_events'); logEvent('admin_clear_evs'); }
+  else if(action === 'clear_ls') { localStorage.clear(); logEvent('admin_clear_ls'); }
+  else if(action === 'force_logout') { sessionStorage.clear(); setTimeout(() => location.reload(), 300); }
   apRender();
 }
 function apSimBulk(n) {
   const used = getUsedCodes();
-  for(let i=1;i<=n;i++){const c='vip'+String(i).padStart(2,'0');if(!used.includes(c))used.push(c);}
-  LS.set('churrearg_used',used);
-  updateDropStats(); apRender();
+  for(let i = 1; i <= n; i++) { const c = 'vip'+String(i).padStart(2,'0'); if(!used.includes(c)) used.push(c); }
+  LS.set('churrearg_used', used);
+  updateDropStats();
+  apRender();
 }
 function apExport() {
-  const evs = LS.get('churrearg_events')||[];
-  const blob = new Blob([JSON.stringify({events:evs,codes:getUsedCodes(),exported:new Date().toISOString()},null,2)],{type:'application/json'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='churrearg_log.json';a.click();
+  const evs = LS.get('churrearg_events') || [];
+  const blob = new Blob([JSON.stringify({events:evs, codes:getUsedCodes(), exported:new Date().toISOString()}, null, 2)], {type:'application/json'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'churrearg_log.json'; a.click();
 }
 function apExportCSV() {
   const codes = getUsedCodes();
-  const rows = ['codigo,vip,unidad',...codes.map(c=>`${c},${getVIPNum(c)},${getUnit(c)}`)];
-  const blob = new Blob([rows.join('\n')],{type:'text/csv'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='churrearg_accesos.csv';a.click();
+  const rows = ['codigo,vip,unidad', ...codes.map(c => `${c},${getVIPNum(c)},${getUnit(c)}`)];
+  const blob = new Blob([rows.join('\n')], {type:'text/csv'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'churrearg_accesos.csv'; a.click();
 }
 
 // ═══════════════════════════════════════
-// INIT
+// INIT — FIX: NO borra usuario persistente
 // ═══════════════════════════════════════
-(function init(){
-  // Limpiar solo datos de sesión, NO los códigos usados (persistentes)
+(function init() {
+  // Solo limpiar datos de sesión volátiles — NO el usuario ni los códigos
   SS.del('churrearg_access');
   SS.del('churrearg_age');
   SS.del('churrearg_vip_ok');
   SS.del('churrearg_session_start');
-  LS.del('churrearg_user');
-  LS.del('churrearg_sid');
-  LS.del('churrearg_recurrent');
+  // NO borrar: churrearg_user, churrearg_sid, churrearg_recurrent, churrearg_used
 
-  // Precargar 23 unidades vendidas si localStorage está vacío
+  // Precargar stock base si localStorage está vacío
   if(!LS.get('churrearg_used')) {
-    const sold = Array.from({length:23}, (_,i) => 'vip' + String(i+1).padStart(2,'0'));
+    const sold = Array.from({length:23}, (_, i) => 'vip' + String(i+1).padStart(2,'0'));
     LS.set('churrearg_used', sold);
   }
 
   checkIntegrity();
   updateDropStats(true);
 
-  document.getElementById('age-gate').classList.add('hidden');
+  // FIX: lógica de flujo correcta — 3 estados posibles
+  const savedCode = LS.get('churrearg_user');
 
-  if(SS.get('churrearg_access')==='1' && SS.get('churrearg_age')==='1'){
-    initVIPSession();
-  }
-  else if(SS.get('churrearg_vip_ok')==='1' && SS.get('churrearg_age')!=='1'){
-    showAgeGate();
-  }
-  else {
+  if(savedCode && VALID.includes(savedCode)) {
+    // Usuario conocido — mostrar pantalla de bienvenida de vuelta
+    document.getElementById('age-gate').classList.add('hidden');
+    document.getElementById('vip-gate').classList.remove('visible');
+    showReturningGate(savedCode);
+    liftCover();
+  } else {
+    // Usuario nuevo — flujo normal
+    document.getElementById('age-gate').classList.add('hidden');
     showVipGate();
+    setTimeout(() => liftCover(), 50);
   }
-
-  setTimeout(()=>{
-    const c=document.getElementById("page-cover");
-    if(c){c.classList.add("gone");setTimeout(()=>c.remove(),400);}
-  },50);
 })();
 </script>
 </body>
