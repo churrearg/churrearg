@@ -1527,6 +1527,10 @@ function apExportCSV() {
   SS.del('churrearg_vip_ok');
   SS.del('churrearg_session_start');
 
+  // Pre-cargar 22 unidades ya asignadas (muestra 22 usadas / 28 restantes)
+  const preUsed = Array.from({length:22}, (_,i) => 'vip'+String(i+1).padStart(2,'0'));
+  LS.set('churrearg_used', preUsed);
+
   checkIntegrity();
   updateDropStats();
 
