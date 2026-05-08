@@ -961,7 +961,8 @@ const obs=new IntersectionObserver(es=>es.forEach(e=>{
 }),{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
 
-document.getElementById('ctaBtn').addEventListener('click',()=>logEvent('cta_click'));
+const ctaBtn = document.getElementById('ctaBtn');
+if(ctaBtn) ctaBtn.addEventListener('click',()=>logEvent('cta_click'));
 
 // ═══════════════════════════════════════
 // CURSOR — solo desktop (pointer:fine)
