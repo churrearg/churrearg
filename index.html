@@ -4,15 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Drop #01 · La Pegajosa — CHURREARG</title>
-
-<!-- SEO & Meta -->
 <meta name="description" content="CHURREARG Drop #01 — La Pegajosa Edition. 50 unidades numeradas. Sin reposición. Acceso por invitación.">
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
 <meta name="theme-color" content="#000000">
-
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Drop #01 · La Pegajosa — CHURREARG">
 <meta property="og:description" content="50 unidades numeradas. Sin reposición. Acceso por invitación exclusiva.">
@@ -22,11 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Drop #01 · La Pegajosa — CHURREARG">
 <meta name="twitter:description" content="50 unidades. Sin reposición. Acceso por invitación.">
-
-<!-- Favicon inline SVG -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23000'/><text y='72' x='50' text-anchor='middle' font-size='60' fill='%23C9A84C' font-family='serif' font-weight='900'>C</text></svg>">
-
-<!-- Fonts with display=swap -->
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 
 <style>
@@ -85,7 +77,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .vg-drop{font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:rgba(201,168,76,.65);margin-bottom:32px;}
 .vg-title{font-family:'Cinzel',serif;font-size:clamp(18px,4vw,26px);font-weight:700;color:#fff;margin-bottom:10px;}
 .vg-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:#888;margin-bottom:10px;max-width:320px;line-height:1.7;}
-/* FIX: hint debajo del subtítulo */
 .vg-hint{font-size:10px;letter-spacing:.2em;color:rgba(201,168,76,.45);margin-bottom:28px;text-transform:uppercase;}
 .vg-form{width:100%;max-width:300px;}
 .vg-input{width:100%;padding:16px 18px;background:#0a0a0a;border:1px solid rgba(201,168,76,.2);color:#e8e8e8;font-family:'Montserrat',sans-serif;font-size:13px;letter-spacing:.15em;text-align:center;outline:none;margin-bottom:10px;transition:border-color .3s;}
@@ -101,18 +92,51 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .vg-blocked{font-size:12px;color:#e74c3c;margin-top:12px;line-height:1.6;display:none;}
 .vg-blocked.visible{display:block;}
 
-/* ── VIP RETURNING BANNER ── */
-#vip-returning{position:fixed;inset:0;z-index:99997;background:#000;display:none;align-items:center;justify-content:center;flex-direction:column;padding:32px 24px;text-align:center;}
+/* ── VIP RETURNING ── */
+#vip-returning{
+  position:fixed;inset:0;z-index:99997;
+  background:#000;
+  display:none;align-items:center;justify-content:center;
+  flex-direction:column;padding:32px 24px;text-align:center;
+  overflow:hidden;
+}
 #vip-returning.visible{display:flex;}
-.vr-logo{font-family:'Cinzel',serif;font-size:clamp(18px,4vw,24px);font-weight:900;letter-spacing:.14em;background:linear-gradient(135deg,#e8c96e,#C9A84C,#9a7a30);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:24px;}
-.vr-unit{font-family:'Cinzel',serif;font-size:clamp(48px,15vw,110px);font-weight:900;line-height:1;background:linear-gradient(135deg,var(--gl),var(--gold),var(--gd));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;letter-spacing:-.02em;}
-.vr-title{font-family:'Cinzel',serif;font-size:clamp(14px,3vw,20px);font-weight:700;color:#fff;margin-bottom:8px;}
-.vr-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:#888;margin-bottom:32px;line-height:1.7;}
-.vr-btn{padding:16px 40px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:.4em;text-transform:uppercase;border:1px solid #C9A84C;background:transparent;color:#C9A84C;cursor:pointer;position:relative;overflow:hidden;transition:color .35s;}
+#vip-returning::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(201,168,76,.07) 0%,transparent 65%);
+  animation:vrPulse 4s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes vrPulse{0%,100%{opacity:.6;transform:scale(1);}50%{opacity:1;transform:scale(1.08);}}
+.vr-particles{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+.vr-p{position:absolute;width:1px;height:1px;background:var(--gold);border-radius:50%;animation:vrFloat linear infinite;opacity:0;}
+@keyframes vrFloat{0%{transform:translateY(100vh) scale(0);opacity:0;}10%{opacity:.6;}90%{opacity:.15;}100%{transform:translateY(-20px) scale(1.5);opacity:0;}}
+.vr-hline{position:absolute;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,.12),transparent);pointer-events:none;}
+.vr-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;max-width:480px;width:100%;}
+@keyframes vrFadeUp{from{opacity:0;transform:translateY(32px);}to{opacity:1;transform:translateY(0);}}
+@keyframes vrFadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes vrScaleIn{from{opacity:0;transform:scale(.85);}to{opacity:1;transform:scale(1);}}
+.vr-status-row{display:flex;align-items:center;gap:8px;margin-bottom:28px;opacity:0;animation:vrFadeUp .5s ease .1s forwards;}
+.vr-dot{width:6px;height:6px;border-radius:50%;background:#2ecc71;animation:pulseDot 2s ease-in-out infinite;box-shadow:0 0 8px rgba(46,204,113,.5);}
+.vr-status-txt{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:600;letter-spacing:.45em;text-transform:uppercase;color:rgba(46,204,113,.7);}
+.vr-logo{font-family:'Cinzel',serif;font-size:clamp(14px,3vw,18px);font-weight:900;letter-spacing:.18em;background:linear-gradient(135deg,#e8c96e,#C9A84C,#9a7a30);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:32px;opacity:0;animation:vrFadeUp .5s ease .2s forwards;}
+.vr-sep{width:40px;height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,.4),transparent);margin-bottom:20px;opacity:0;animation:vrFadeIn .5s ease .35s forwards;}
+.vr-eyebrow{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(13px,2.5vw,16px);color:rgba(232,232,232,.45);letter-spacing:.04em;margin-bottom:6px;opacity:0;animation:vrFadeUp .5s ease .4s forwards;}
+.vr-unit{font-family:'Cinzel',serif;font-size:clamp(72px,22vw,160px);font-weight:900;line-height:.9;letter-spacing:-.04em;background:linear-gradient(135deg,var(--gl) 0%,var(--gold) 50%,var(--gd) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px;opacity:0;animation:vrScaleIn .7s cubic-bezier(.16,1,.3,1) .5s forwards;position:relative;}
+.vr-unit::after{content:attr(data-unit);position:absolute;inset:0;font-family:'Cinzel',serif;font-weight:900;background:none;-webkit-text-fill-color:rgba(201,168,76,.06);color:rgba(201,168,76,.06);filter:blur(20px);z-index:-1;transform:scale(1.05);}
+.vr-drop-label{font-size:9px;letter-spacing:.45em;text-transform:uppercase;color:rgba(201,168,76,.4);font-weight:600;margin-bottom:28px;opacity:0;animation:vrFadeUp .5s ease .85s forwards;}
+.vr-ornament{display:flex;align-items:center;gap:12px;width:100%;max-width:280px;margin-bottom:28px;opacity:0;animation:vrFadeIn .5s ease .95s forwards;}
+.vr-ornament-line{flex:1;height:1px;background:rgba(201,168,76,.18);}
+.vr-ornament-sym{font-family:'Cinzel',serif;font-size:12px;color:rgba(201,168,76,.35);}
+.vr-title{font-family:'Cinzel',serif;font-size:clamp(16px,4vw,24px);font-weight:700;color:#fff;line-height:1.2;margin-bottom:10px;opacity:0;animation:vrFadeUp .5s ease 1.05s forwards;}
+.vr-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(12px,2.5vw,15px);color:rgba(232,232,232,.45);line-height:1.75;margin-bottom:36px;max-width:320px;opacity:0;animation:vrFadeUp .5s ease 1.15s forwards;}
+.vr-btn-wrap{opacity:0;animation:vrFadeUp .5s ease 1.28s forwards;}
+.vr-btn{padding:18px 52px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:.45em;text-transform:uppercase;border:1px solid #C9A84C;background:transparent;color:#C9A84C;cursor:pointer;position:relative;overflow:hidden;transition:color .35s;}
 .vr-btn::before{content:'';position:absolute;inset:0;background:#C9A84C;transform:translateX(-101%);transition:transform .35s cubic-bezier(.77,0,.18,1);z-index:0;}
 .vr-btn:hover,.vr-btn:active{color:#000;}
 .vr-btn:hover::before,.vr-btn:active::before{transform:translateX(0);}
 .vr-btn span{position:relative;z-index:1;}
+.vr-meta{margin-top:20px;font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:rgba(201,168,76,.25);opacity:0;animation:vrFadeIn .5s ease 1.4s forwards;}
 
 /* ── VIP WELCOME BANNER ── */
 #vip-welcome{display:none;max-width:1000px;margin:0 auto;padding:0 clamp(16px,4vw,24px) clamp(12px,2vw,20px);}
@@ -125,7 +149,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .vw-unit{font-size:clamp(9px,1.8vw,11px);letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-left:auto;}
 .vw-reserve{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(12px,2vw,14px);color:rgba(232,232,232,.7);line-height:1.6;}
 .vw-reserve strong{color:var(--gold);font-style:normal;font-weight:600;}
-.vw-meta{display:flex;gap:clamp(12px,3vw,24px);margin-top:12px;flex-wrap:wrap;}
 
 /* ── RESERVE BANNER ── */
 .reserve-banner{display:none;max-width:1000px;margin:0 auto;padding:0 clamp(16px,4vw,24px);}
@@ -207,7 +230,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .cd-num.tick{color:var(--gl);}
 .cd-label{font-size:clamp(10px,1.5vw,11px);letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-top:8px;font-weight:600;}
 .cd-sep{font-family:'Cinzel',serif;font-size:clamp(28px,8vw,68px);font-weight:900;color:rgba(201,168,76,.2);padding-top:3px;align-self:flex-start;}
-/* Post-launch countdown state */
 .cd-launched{font-family:'Cinzel',serif;font-size:clamp(18px,4vw,30px);font-weight:700;color:var(--gold);letter-spacing:.1em;padding:clamp(24px,4vw,40px) 0;}
 
 /* ── SPECS ── */
@@ -218,33 +240,11 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .spec-row:hover{border-color:rgba(201,168,76,.24);background:#161616;}
 .spec-key{font-size:clamp(10px,1.5vw,11px);letter-spacing:.2em;text-transform:uppercase;color:#888;font-weight:600;}
 .spec-val{font-family:'Cinzel',serif;font-size:clamp(12px,2vw,14px);color:var(--gold);font-weight:700;letter-spacing:.04em;}
-
-/* FIX: spec blur con toggle click — sin filtro persiste en mobile */
-.spec-val.blurred{
-  filter:blur(5px);
-  cursor:pointer;
-  position:relative;
-  transition:filter .0s;
-  user-select:none;
-}
-.spec-val.blurred::after{
-  content:'';
-  position:absolute;
-  inset:-4px -8px;
-}
-/* Cypher reveal animation */
-@keyframes cypherReveal{
-  0%{filter:blur(6px);opacity:.4;}
-  30%{filter:blur(3px);opacity:.7;}
-  60%{filter:blur(1px);opacity:.9;}
-  100%{filter:blur(0);opacity:1;}
-}
-.spec-val.revealing{
-  animation:cypherReveal .45s ease forwards;
-}
-.spec-val.revealed{
-  filter:blur(0) !important;
-}
+.spec-val.blurred{filter:blur(5px);cursor:pointer;position:relative;transition:filter .0s;user-select:none;}
+.spec-val.blurred::after{content:'';position:absolute;inset:-4px -8px;}
+@keyframes cypherReveal{0%{filter:blur(6px);opacity:.4;}30%{filter:blur(3px);opacity:.7;}60%{filter:blur(1px);opacity:.9;}100%{filter:blur(0);opacity:1;}}
+.spec-val.revealing{animation:cypherReveal .45s ease forwards;}
+.spec-val.revealed{filter:blur(0) !important;}
 
 /* ── ABOUT ── */
 .about-block{background:var(--carbon);border:1px solid rgba(201,168,76,.13);padding:clamp(24px,4vw,48px);position:relative;overflow:hidden;}
@@ -253,17 +253,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .about-text strong{color:var(--gold);font-weight:600;}
 .about-text p{margin-bottom:14px;}
 .about-text p:last-child{margin-bottom:0;}
-
-/* ── UNIT BADGE ── */
-#unit-badge-section{display:none;max-width:1000px;margin:0 auto;padding:clamp(24px,4vw,40px) clamp(16px,4vw,24px);}
-#unit-badge-section.visible{display:block;}
-.ub-inner{border:1px solid rgba(201,168,76,.15);padding:clamp(20px,3vw,32px);background:rgba(201,168,76,.02);text-align:center;}
-.ub-label{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:rgba(201,168,76,.6);margin-bottom:20px;}
-#unit-badge-svg{max-width:260px;margin:0 auto 16px;display:block;cursor:pointer;transition:transform .3s ease,filter .3s ease;}
-#unit-badge-svg:hover{transform:scale(1.03);filter:drop-shadow(0 0 18px rgba(201,168,76,.3));}
-.ub-hint{font-family:'Playfair Display',serif;font-style:italic;font-size:12px;color:#555;letter-spacing:.05em;}
-.ub-download{margin-top:14px;padding:12px 28px;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;border:1px solid rgba(201,168,76,.3);background:transparent;color:rgba(201,168,76,.7);cursor:pointer;transition:all .3s;}
-.ub-download:hover{border-color:#C9A84C;color:#C9A84C;}
 
 /* ── CTA ── */
 .cta-section{padding:clamp(64px,9vw,100px) clamp(16px,4vw,24px);max-width:680px;margin:0 auto;text-align:center;border-top:1px solid rgba(201,168,76,.08);}
@@ -283,7 +272,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;border-top:1px solid rgba(201,168,76,.08);}
 .footer-brand{font-family:'Cinzel',serif;font-size:clamp(16px,4vw,20px);font-weight:900;background:linear-gradient(135deg,var(--gl),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:.12em;margin-bottom:8px;}
 .footer-sub{font-size:clamp(10px,1.5vw,11px);letter-spacing:.25em;color:var(--muted);text-transform:uppercase;}
-/* FIX: footer-micro más visible, copy más poderoso en posición correcta */
 .footer-tagline{font-family:'Cinzel',serif;font-size:clamp(13px,2vw,16px);font-weight:700;color:rgba(201,168,76,.5);letter-spacing:.08em;margin-bottom:12px;}
 .footer-micro{font-size:10px;color:#555;letter-spacing:.12em;margin-top:8px;font-family:'Playfair Display',serif;font-style:italic;}
 
@@ -303,6 +291,58 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
 .eo-btn span{position:relative;z-index:1;}
 .eo-close{font-size:10px;letter-spacing:.2em;color:#333;cursor:pointer;text-transform:uppercase;transition:color .2s;}
 .eo-close:hover{color:#666;}
+
+/* ── LOGOUT FLOTANTE ── */
+#logout-btn{
+  position:fixed;
+  bottom:24px;left:24px;
+  z-index:9990;
+  display:none;
+  align-items:center;gap:8px;
+  padding:10px 18px;
+  background:#0a0a0a;
+  border:1px solid rgba(201,168,76,.2);
+  color:rgba(201,168,76,.5);
+  font-family:'Montserrat',sans-serif;
+  font-size:9px;font-weight:600;
+  letter-spacing:.3em;text-transform:uppercase;
+  cursor:pointer;
+  transition:all .25s ease;
+  box-shadow:0 4px 24px rgba(0,0,0,.7);
+}
+#logout-btn:hover{border-color:rgba(231,76,60,.5);color:#e74c3c;background:#0f0f0f;}
+#logout-btn.visible{display:flex;}
+#logout-btn svg{flex-shrink:0;transition:transform .25s ease;}
+#logout-btn:hover svg{transform:translateX(2px);}
+
+/* ── LOGOUT CONFIRM MODAL ── */
+#logout-confirm{
+  position:fixed;inset:0;z-index:99996;
+  background:rgba(0,0,0,.88);
+  display:none;align-items:center;justify-content:center;
+  flex-direction:column;padding:32px 24px;text-align:center;
+  backdrop-filter:blur(6px);
+}
+#logout-confirm.visible{display:flex;}
+.lc-title{font-family:'Cinzel',serif;font-size:clamp(18px,4vw,26px);font-weight:700;color:#fff;margin-bottom:10px;}
+.lc-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(12px,2vw,15px);color:#777;line-height:1.7;margin-bottom:32px;max-width:280px;}
+.lc-btns{display:flex;flex-direction:column;gap:10px;width:100%;max-width:260px;}
+.lc-btn-yes{padding:16px 24px;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;border:1px solid rgba(231,76,60,.5);background:transparent;color:#e74c3c;cursor:pointer;position:relative;overflow:hidden;transition:color .3s;}
+.lc-btn-yes::before{content:'';position:absolute;inset:0;background:#e74c3c;transform:translateX(-101%);transition:transform .3s cubic-bezier(.77,0,.18,1);z-index:0;}
+.lc-btn-yes:hover{color:#fff;}
+.lc-btn-yes:hover::before{transform:translateX(0);}
+.lc-btn-yes span{position:relative;z-index:1;}
+.lc-btn-no{padding:14px 24px;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;border:1px solid rgba(255,255,255,.1);background:transparent;color:#444;cursor:pointer;transition:color .2s,border-color .2s;}
+.lc-btn-no:hover{color:#888;border-color:rgba(255,255,255,.2);}
+
+/* ── HISTORIA IG — SECCIÓN ── */
+#ig-story-section{
+  display:none;
+  max-width:1000px;margin:0 auto;
+  padding:clamp(52px,7vw,80px) clamp(16px,4vw,24px);
+  border-top:1px solid rgba(201,168,76,.08);
+}
+#ig-story-section.visible{display:block;}
 
 /* ── ADMIN PANEL ── */
 #admin-panel{position:fixed;bottom:20px;right:20px;width:350px;cursor:none;max-height:500px;background:#0a0a0a;border:1px solid rgba(201,168,76,.25);z-index:99995;display:none;flex-direction:column;font-family:'Montserrat',sans-serif;font-size:12px;color:#ccc;box-shadow:0 8px 40px rgba(0,0,0,.9);transition:all .3s cubic-bezier(.77,0,.18,1);}
@@ -387,11 +427,31 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
 
 <!-- VIP RETURNING -->
 <div id="vip-returning">
-  <div class="vr-logo">CHURREARG</div>
-  <div class="vr-unit" id="vrUnit">#003</div>
-  <div class="vr-title" id="vrTitle">Bienvenido de vuelta</div>
-  <p class="vr-sub" id="vrSub">Tu acceso sigue activo.<br>La reserva espera.</p>
-  <button class="vr-btn" onclick="enterFromReturning()"><span>Entrar</span></button>
+  <div class="vr-particles" id="vrParticles"></div>
+  <div class="vr-hline" style="top:18%"></div>
+  <div class="vr-hline" style="bottom:18%"></div>
+  <div class="vr-inner">
+    <div class="vr-status-row">
+      <div class="vr-dot"></div>
+      <span class="vr-status-txt">Acceso activo</span>
+    </div>
+    <div class="vr-logo">CHURREARG</div>
+    <div class="vr-sep"></div>
+    <div class="vr-eyebrow">De vuelta donde siempre estuviste.</div>
+    <div class="vr-unit" id="vrUnit" data-unit="#001">#001</div>
+    <div class="vr-drop-label">Collector's Drop #01 · La Pegajosa</div>
+    <div class="vr-ornament">
+      <div class="vr-ornament-line"></div>
+      <div class="vr-ornament-sym">✦</div>
+      <div class="vr-ornament-line"></div>
+    </div>
+    <div class="vr-title" id="vrTitle">Bienvenido de vuelta</div>
+    <p class="vr-sub" id="vrSub">Tu acceso sigue activo.<br>La reserva espera.</p>
+    <div class="vr-btn-wrap">
+      <button class="vr-btn" onclick="enterFromReturning()"><span>Entrar al drop</span></button>
+    </div>
+    <div class="vr-meta" id="vrMeta">Drop #01 · 50 unidades · Sin reposición</div>
+  </div>
 </div>
 
 <!-- ADMIN LOGIN -->
@@ -419,6 +479,7 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
     <button class="ap-tab" onclick="apTab(this,'analitica')">Analítica</button>
     <button class="ap-tab" onclick="apTab(this,'sim')">Simulación</button>
     <button class="ap-tab" onclick="apTab(this,'ctrl')">Control</button>
+    <button class="ap-tab" onclick="apTab(this,'cert')">Cert</button>
   </div>
   <div id="ap-body"></div>
 </div>
@@ -432,7 +493,24 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
   <div class="eo-close" onclick="closeExitOverlay()">No me interesa</div>
 </div>
 
-<!-- MAIN CONTENT -->
+<!-- LOGOUT FLOTANTE -->
+<button id="logout-btn" onclick="showLogoutConfirm()">
+  <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+    <path d="M4 1H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h2M7.5 7.5 10 5.5 7.5 3.5M10 5.5H4.5" stroke="#e74c3c" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  Cerrar sesión
+</button>
+
+<!-- LOGOUT CONFIRM MODAL -->
+<div id="logout-confirm">
+  <div class="lc-title">¿Cerrar sesión?</div>
+  <p class="lc-sub">Vas a tener que volver a ingresar tu código VIP la próxima vez.</p>
+  <div class="lc-btns">
+    <button class="lc-btn-yes" onclick="confirmLogout()"><span>Sí, cerrar sesión</span></button>
+    <button class="lc-btn-no" onclick="cancelLogout()">Cancelar</button>
+  </div>
+</div>
+
 <!-- HERO -->
 <div class="hero">
   <div class="smoke-bg" id="smokeBg"></div>
@@ -445,7 +523,7 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
   <div class="hero-line"></div>
 </div>
 
-<!-- POST-LAUNCH BANNER (hidden until launch) -->
+<!-- POST-LAUNCH BANNER -->
 <div id="launch-banner">
   <div class="lb-inner">
     <div class="lb-label">Drop #01 — La Pegajosa</div>
@@ -484,54 +562,6 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
   <div class="so-inner">
     <div class="so-title">Drop #01 Agotado</div>
     <p class="so-sub">Las 50 unidades fueron asignadas.<br>Seguí <strong style="color:#C9A84C">@churrearg</strong> para ser el primero en enterarte del Drop #02.</p>
-  </div>
-</div>
-
-<!-- UNIT BADGE SECTION -->
-<div id="unit-badge-section">
-  <div class="ub-inner">
-    <div class="ub-label">Tu unidad asignada</div>
-    <svg id="unit-badge-svg" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" onclick="downloadBadge()">
-      <!-- background -->
-      <rect width="260" height="260" fill="#0A0A0A"/>
-      <!-- outer border -->
-      <rect x="8" y="8" width="244" height="244" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
-      <!-- inner border -->
-      <rect x="16" y="16" width="228" height="228" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.15"/>
-      <!-- corner ornaments -->
-      <line x1="8" y1="8" x2="28" y2="8" stroke="#C9A84C" stroke-width="1" opacity="0.6"/>
-      <line x1="8" y1="8" x2="8" y2="28" stroke="#C9A84C" stroke-width="1" opacity="0.6"/>
-      <line x1="252" y1="8" x2="232" y2="8" stroke="#C9A84C" stroke-width="1" opacity="0.6"/>
-      <line x1="252" y1="8" x2="252" y2="28" stroke="#C9A84C" stroke-width="1" opacity="0.6"/>
-      <line x1="8" y1="252" x2="28" y2="252" stroke="#C9A84C" stroke-width="1" opacity="0.6"/>
-      <line x1="8" y1="252" x2="8" y2="232" stroke="#C9A84C" stroke-width="1" opacity="0.6"/>
-      <line x1="252" y1="252" x2="232" y2="252" stroke="#C9A84C" stroke-width="1" opacity="0.6"/>
-      <line x1="252" y1="252" x2="252" y2="232" stroke="#C9A84C" stroke-width="1" opacity="0.6"/>
-      <!-- brand -->
-      <text x="130" y="58" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="#C9A84C" letter-spacing="6" opacity="0.9">CHURREARG</text>
-      <!-- divider -->
-      <line x1="60" y1="70" x2="200" y2="70" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>
-      <!-- drop label -->
-      <text x="130" y="92" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#C9A84C" letter-spacing="4" opacity="0.5">DROP #01</text>
-      <!-- unit number -->
-      <text id="badge-unit-num" x="130" y="168" text-anchor="middle" font-family="Georgia,serif" font-size="72" font-weight="bold" fill="url(#badgeGrad)" letter-spacing="-2">#001</text>
-      <!-- defs for gradient -->
-      <defs>
-        <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#e8c96e"/>
-          <stop offset="50%" stop-color="#C9A84C"/>
-          <stop offset="100%" stop-color="#9a7a30"/>
-        </linearGradient>
-      </defs>
-      <!-- divider bottom -->
-      <line x1="60" y1="185" x2="200" y2="185" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>
-      <!-- edition -->
-      <text x="130" y="206" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#C9A84C" letter-spacing="3" opacity="0.5">LA PEGAJOSA EDITION</text>
-      <!-- serial -->
-      <text id="badge-serial" x="130" y="228" text-anchor="middle" font-family="Georgia,serif" font-size="8" fill="#555" letter-spacing="2">EDICIÓN LIMITADA · 50 UNIDADES</text>
-    </svg>
-    <p class="ub-hint">Tocá para descargar tu certificado de unidad</p>
-    <button class="ub-download" onclick="downloadBadge()">Descargar PNG</button>
   </div>
 </div>
 
@@ -618,6 +648,54 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
   </div>
 </div>
 
+<div class="divider"><div class="divider-line"></div><div class="divider-sym">✦</div><div class="divider-line"></div></div>
+
+<!-- HISTORIA IG / CERTIFICADO -->
+<div id="ig-story-section">
+  <div class="sec-label">Tu Historia</div>
+  <h2 class="sec-title" style="margin-bottom:clamp(20px,3vw,32px);">Sos parte de algo<br>que no es para todos.</h2>
+
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(24px,4vw,48px);justify-content:center;">
+
+    <!-- Preview canvas -->
+    <div style="flex-shrink:0;">
+      <canvas id="story-canvas" width="1080" height="1920"
+        style="width:min(180px,42vw);height:auto;display:block;cursor:pointer;
+               border:1px solid rgba(201,168,76,.15);
+               transition:transform .3s ease,filter .3s ease,border-color .3s ease;"
+        onclick="downloadStory()"
+        onmouseover="this.style.transform='scale(1.02)';this.style.filter='drop-shadow(0 0 18px rgba(201,168,76,.28))';this.style.borderColor='rgba(201,168,76,.4)'"
+        onmouseout="this.style.transform='scale(1)';this.style.filter='none';this.style.borderColor='rgba(201,168,76,.15)'">
+      </canvas>
+    </div>
+
+    <!-- Info + botón -->
+    <div style="flex:1;min-width:200px;display:flex;flex-direction:column;justify-content:center;gap:14px;text-align:left;">
+      <div style="font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:rgba(201,168,76,.55);">Drop #01 · La Pegajosa</div>
+
+      <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(13px,2vw,16px);color:rgba(232,232,232,.65);line-height:1.8;">
+        Tu número de unidad, tu nombre en el drop.<br>
+        <strong style="color:var(--gold);font-style:normal;">Descargalo y compartilo en tu historia.</strong>
+      </p>
+
+      <div style="height:1px;background:rgba(201,168,76,.1);"></div>
+
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <button id="cert-download-btn" onclick="downloadStory()"
+          style="padding:14px 28px;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:600;
+                 letter-spacing:.4em;text-transform:uppercase;
+                 border:1px solid #C9A84C;background:transparent;color:#C9A84C;
+                 cursor:pointer;position:relative;overflow:hidden;transition:color .35s;width:fit-content;">
+          <span style="position:relative;z-index:1;">Descargar Historia</span>
+          <div style="position:absolute;inset:0;background:#C9A84C;transform:translateX(-101%);transition:transform .35s cubic-bezier(.77,0,.18,1);z-index:0;"
+               id="cert-btn-fill"></div>
+        </button>
+        <div style="font-size:9px;letter-spacing:.15em;color:#444;text-transform:uppercase;">1080 × 1920px · Listo para Stories</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- CTA -->
 <div class="cta-section reveal">
   <div class="sec-label">Acceso Limitado</div>
@@ -632,16 +710,12 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
 
 <footer>
   <div class="footer-brand">CHURREARG</div>
-  <!-- FIX: copy poderoso en posición visible -->
   <div class="footer-tagline">Tener el acceso no es suficiente.<br>Hay que merecerlo.</div>
   <div class="footer-sub">Accesorio Premium · Buenos Aires · Argentina</div>
   <div class="footer-micro">Producto coleccionable. CHURREARG™ no se responsabiliza por su uso.</div>
 </footer>
 
 <script>
-// ═══════════════════════════════════════
-// CONFIG
-// ═══════════════════════════════════════
 const CFG = {
   TOTAL: 50,
   MAX_ATTEMPTS: 5,
@@ -649,16 +723,12 @@ const CFG = {
   LAUNCH: '2026-06-10T00:00:00-03:00',
   ADMIN_USER: 'admin',
   ADMIN_PASS: 'churrearg2026',
-  // Simulación de movimiento orgánico de stock (1 unidad cada 8 horas desde launch)
   DROP_START_TS: new Date('2026-05-16T00:00:00-03:00').getTime(),
   ORGANIC_RATE_MS: 8 * 60 * 60 * 1000
 };
 
 const VALID = Array.from({length:50},(_,i)=>'vip'+String(i+1).padStart(2,'0'));
 
-// ═══════════════════════════════════════
-// STORAGE HELPERS
-// ═══════════════════════════════════════
 const LS = {
   get: k => { try{ return JSON.parse(localStorage.getItem(k)); }catch(e){ return null; } },
   set: (k,v) => localStorage.setItem(k, JSON.stringify(v)),
@@ -670,9 +740,6 @@ const SS = {
   del: k => sessionStorage.removeItem(k)
 };
 
-// ═══════════════════════════════════════
-// EVENTO LOG
-// ═══════════════════════════════════════
 function logEvent(type, detail='') {
   const evs = LS.get('churrearg_events') || [];
   evs.unshift({ type, detail, ts: new Date().toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit',second:'2-digit'}) });
@@ -680,17 +747,11 @@ function logEvent(type, detail='') {
   LS.set('churrearg_events', evs);
 }
 
-// ═══════════════════════════════════════
-// SESSION ID
-// ═══════════════════════════════════════
 function generateSessionID(code) {
   const n = code.replace('vip','').toUpperCase();
   return 'VIP'+n+'-'+Math.random().toString(36).substr(2,4).toUpperCase();
 }
 
-// ═══════════════════════════════════════
-// UNIT / IDENTITY
-// ═══════════════════════════════════════
 function getUnit(code) {
   const n = parseInt(code.replace('vip',''));
   return '#'+String(n).padStart(3,'0');
@@ -699,12 +760,8 @@ function getVIPNum(code) {
   return '#'+code.replace('vip','').padStart(2,'0');
 }
 
-// ═══════════════════════════════════════
-// STOCK CON MOVIMIENTO ORGÁNICO SIMULADO
-// FIX: contador dinámico basado en tiempo
-// ═══════════════════════════════════════
 function getOrganicSold() {
-  const base = 23; // unidades vendidas base al inicio del drop
+  const base = 23;
   const elapsed = Date.now() - CFG.DROP_START_TS;
   if(elapsed <= 0) return base;
   const organic = Math.floor(elapsed / CFG.ORGANIC_RATE_MS);
@@ -728,9 +785,6 @@ function getAvailStatus() {
   return ['Últimas unidades','avail-low'];
 }
 
-// ═══════════════════════════════════════
-// INTEGRITY CHECK
-// ═══════════════════════════════════════
 function checkIntegrity() {
   const u = LS.get('churrearg_user');
   if(u && !VALID.includes(u)) {
@@ -742,9 +796,6 @@ function checkIntegrity() {
   return true;
 }
 
-// ═══════════════════════════════════════
-// WEB AUDIO — SOUND DESIGN
-// ═══════════════════════════════════════
 let _audioCtx = null;
 function getAudioCtx() {
   if(!_audioCtx) _audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -754,11 +805,7 @@ function getAudioCtx() {
 function playSound(type) {
   try {
     const ctx = getAudioCtx();
-    const gain = ctx.createGain();
-    gain.connect(ctx.destination);
-
     if(type === 'access') {
-      // Acceso VIP confirmado — dos tonos ascendentes cálidos
       [440, 660].forEach((freq, i) => {
         const osc = ctx.createOscillator();
         const g = ctx.createGain();
@@ -771,10 +818,7 @@ function playSound(type) {
         osc.start(ctx.currentTime + i * 0.18);
         osc.stop(ctx.currentTime + i * 0.18 + 0.35);
       });
-    }
-
-    else if(type === 'error') {
-      // Código inválido — tono bajo, seco, corto
+    } else if(type === 'error') {
       const osc = ctx.createOscillator();
       const g = ctx.createGain();
       osc.connect(g); g.connect(ctx.destination);
@@ -784,10 +828,7 @@ function playSound(type) {
       g.gain.setValueAtTime(0.06, ctx.currentTime);
       g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.14);
       osc.start(); osc.stop(ctx.currentTime + 0.14);
-    }
-
-    else if(type === 'reveal') {
-      // Reveal de spec — sweep ascendente etéreo
+    } else if(type === 'reveal') {
       const osc = ctx.createOscillator();
       const g = ctx.createGain();
       osc.connect(g); g.connect(ctx.destination);
@@ -798,10 +839,7 @@ function playSound(type) {
       g.gain.linearRampToValueAtTime(0.07, ctx.currentTime + 0.1);
       g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.45);
       osc.start(); osc.stop(ctx.currentTime + 0.45);
-    }
-
-    else if(type === 'click') {
-      // CTA click — click premium casi inaudible
+    } else if(type === 'click') {
       const osc = ctx.createOscillator();
       const g = ctx.createGain();
       osc.connect(g); g.connect(ctx.destination);
@@ -812,33 +850,14 @@ function playSound(type) {
       g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.1);
       osc.start(); osc.stop(ctx.currentTime + 0.1);
     }
-
-    else if(type === 'tick') {
-      // Countdown tick sutil (solo en segundos finales si quisieras)
-      const osc = ctx.createOscillator();
-      const g = ctx.createGain();
-      osc.connect(g); g.connect(ctx.destination);
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(800, ctx.currentTime);
-      g.gain.setValueAtTime(0.02, ctx.currentTime);
-      g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.05);
-      osc.start(); osc.stop(ctx.currentTime + 0.05);
-    }
-  } catch(e) {
-    // Audio no disponible — silencio sin romper
-  }
+  } catch(e) {}
 }
 
-// ═══════════════════════════════════════
-// HAPTIC FEEDBACK (mobile)
-// ═══════════════════════════════════════
 function haptic(pattern = 10) {
   if('vibrate' in navigator) navigator.vibrate(pattern);
 }
 
-// ═══════════════════════════════════════
-// AGE GATE
-// ═══════════════════════════════════════
+// ── AGE GATE ──
 function ageAllow() {
   SS.set('churrearg_age','1');
   const g = document.getElementById('age-gate');
@@ -868,15 +887,25 @@ function showAgeGate() {
   });
 }
 
-// ═══════════════════════════════════════
-// VIP RETURNING — FIX: reconocimiento de usuario que vuelve
-// ═══════════════════════════════════════
+// ── VIP RETURNING ──
 function showReturningGate(code) {
   const unit = getUnit(code);
   const vnum = getVIPNum(code);
-  document.getElementById('vrUnit').textContent = unit;
+  const unitEl = document.getElementById('vrUnit');
+  unitEl.textContent = unit;
+  unitEl.setAttribute('data-unit', unit);
   document.getElementById('vrTitle').textContent = `Bienvenido de vuelta, VIP ${vnum}`;
-  document.getElementById('vrSub').textContent = 'Tu acceso sigue activo.\nLa reserva espera.';
+  document.getElementById('vrSub').textContent = 'Tu unidad está reservada.\nLa reserva espera tu movimiento.';
+  const container = document.getElementById('vrParticles');
+  if(container && container.children.length === 0) {
+    for(let i = 0; i < 28; i++) {
+      const p = document.createElement('div');
+      p.classList.add('vr-p');
+      const size = 1 + Math.random() * 2;
+      p.style.cssText = `width:${size}px;height:${size}px;left:${Math.random()*100}%;animation-duration:${8+Math.random()*14}s;animation-delay:${Math.random()*8}s;opacity:0;`;
+      container.appendChild(p);
+    }
+  }
   document.getElementById('vip-returning').classList.add('visible');
 }
 
@@ -893,9 +922,7 @@ function enterFromReturning() {
   }, 300);
 }
 
-// ═══════════════════════════════════════
-// VIP LOGIN
-// ═══════════════════════════════════════
+// ── VIP LOGIN ──
 function validateCode(raw) {
   return VALID.includes(raw.toLowerCase().trim());
 }
@@ -916,17 +943,14 @@ function handleAttempts() {
 function submitVip() {
   const raw = document.getElementById('vipInput').value.toLowerCase().trim();
   const err = document.getElementById('vipError');
-
   if(raw === 'admin') {
     document.getElementById('vip-gate').classList.remove('visible');
     document.getElementById('admin-login').classList.add('visible');
     setTimeout(() => document.getElementById('alUser').focus(), 100);
     return;
   }
-
   const { blocked, remaining } = handleAttempts();
   if(blocked) { showBlocked(remaining); return; }
-
   if(!validateCode(raw)) {
     const newAtt = (parseInt(LS.get('churrearg_attempts')||0)) + 1;
     LS.set('churrearg_attempts', newAtt);
@@ -942,27 +966,20 @@ function submitVip() {
     }
     return;
   }
-
   const code = raw;
   LS.del('churrearg_attempts');
   LS.del('churrearg_block_ts');
-
   const used = getUsedCodes();
   if(!used.includes(code)) { used.push(code); LS.set('churrearg_used', used); }
-
   const sid = generateSessionID(code);
-  // FIX: persistir usuario en localStorage para reconocimiento futuro
   LS.set('churrearg_user', code);
   LS.set('churrearg_sid', sid);
   LS.set('churrearg_recurrent', '0');
   SS.set('churrearg_access', '1');
   SS.set('churrearg_session_start', Date.now().toString());
   logEvent('login_success', code);
-
   playSound('access');
   haptic(10);
-
-  // FIX: primero ocultar VIP gate, luego mostrar age gate — sin overlap
   const gate = document.getElementById('vip-gate');
   gate.style.transition = 'opacity .3s ease';
   gate.style.opacity = '0';
@@ -994,17 +1011,31 @@ document.addEventListener('keydown', e => {
   if(e.ctrlKey && e.shiftKey && e.key === 'D') { e.preventDefault(); toggleAdmin(); }
 });
 
-// ═══════════════════════════════════════
-// COVER LIFT
-// ═══════════════════════════════════════
+// ── LOGOUT ──
+function showLogoutConfirm() {
+  document.getElementById('logout-confirm').classList.add('visible');
+}
+function cancelLogout() {
+  document.getElementById('logout-confirm').classList.remove('visible');
+}
+function confirmLogout() {
+  // Borrar datos de usuario
+  LS.del('churrearg_user');
+  LS.del('churrearg_sid');
+  LS.del('churrearg_recurrent');
+  SS.del('churrearg_access');
+  SS.del('churrearg_session_start');
+  logEvent('logout');
+  setTimeout(() => location.reload(), 200);
+}
+
+// ── COVER LIFT ──
 function liftCover() {
   const c = document.getElementById('page-cover');
   if(c) { c.classList.add('gone'); setTimeout(() => c.remove(), 400); }
 }
 
-// ═══════════════════════════════════════
-// INIT VIP SESSION — FIX: no borra usuario
-// ═══════════════════════════════════════
+// ── INIT VIP SESSION ──
 function initVIPSession() {
   const code = LS.get('churrearg_user');
   if(!code) return;
@@ -1020,11 +1051,14 @@ function initVIPSession() {
   document.getElementById('reserveBanner').classList.add('visible');
   document.getElementById('statusBar').classList.add('visible');
 
-  // Unit badge
-  document.getElementById('unit-badge-section').classList.add('visible');
-  document.getElementById('badge-unit-num').textContent = unit;
+  // Mostrar botón logout
+  document.getElementById('logout-btn').classList.add('visible');
 
-  // Check sold out
+  // Mostrar sección historia IG (siempre para VIP autenticado)
+  const storySection = document.getElementById('ig-story-section');
+  storySection.classList.add('visible');
+  setTimeout(() => renderStoryCanvas(code), 200);
+
   if(getRemainingUnits() === 0) {
     document.getElementById('soldout-banner').classList.add('visible');
     document.getElementById('ctaWrap').classList.remove('visible');
@@ -1032,7 +1066,6 @@ function initVIPSession() {
     document.getElementById('ctaLocked').textContent = 'Las 50 unidades ya fueron asignadas.';
   }
 
-  // Check post-launch
   if(Date.now() >= new Date(CFG.LAUNCH).getTime()) {
     document.getElementById('launch-banner').classList.add('visible');
   }
@@ -1040,9 +1073,7 @@ function initVIPSession() {
   updateDropStats(true);
 }
 
-// ═══════════════════════════════════════
-// DROP STATS UI
-// ═══════════════════════════════════════
+// ── DROP STATS ──
 function updateDropStats(instant = false) {
   const rem = getRemainingUnits();
   const pct = getProgress();
@@ -1074,30 +1105,23 @@ function updateDropStats(instant = false) {
     'Sin unidades disponibles.';
 }
 
-// ═══════════════════════════════════════
-// COUNTDOWN — FIX: estado post-launch
-// ═══════════════════════════════════════
+// ── COUNTDOWN ──
 function updateCountdown() {
   const launchMs = new Date(CFG.LAUNCH).getTime();
   const diff = launchMs - Date.now();
-
   if(diff <= 0) {
-    // POST-LAUNCH STATE
     document.getElementById('cd-live').style.display = 'none';
     document.getElementById('cd-launched').style.display = 'block';
     document.getElementById('cdDateLabel').style.display = 'none';
     return;
   }
-
   const pad = n => String(n).padStart(2,'0');
   const s = document.getElementById('cdSecs');
   const newSec = pad(Math.floor((diff%60000)/1000));
-
   if(s.textContent !== newSec) {
     s.classList.add('tick');
     setTimeout(() => s.classList.remove('tick'), 300);
   }
-
   s.textContent = newSec;
   document.getElementById('cdDays').textContent = pad(Math.floor(diff/86400000));
   document.getElementById('cdHours').textContent = pad(Math.floor((diff%86400000)/3600000));
@@ -1106,9 +1130,7 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// ═══════════════════════════════════════
-// SPEC BLUR — FIX: toggle con click, cypher reveal animation
-// ═══════════════════════════════════════
+// ── SPEC BLUR ──
 function revealSpec(el) {
   if(el.classList.contains('revealed')) return;
   playSound('reveal');
@@ -1122,14 +1144,11 @@ function revealSpec(el) {
   }, 450);
 }
 
-// ═══════════════════════════════════════
-// UNITS COUNTER ANIMATION — FIX: empieza desde valor real
-// ═══════════════════════════════════════
+// ── UNITS COUNTER ──
 function animCount(el, target, dur) {
-  const start = target; // FIX: mostrar valor correcto inmediatamente, luego animar
-  el.textContent = start;
+  el.textContent = target;
   let s = 0;
-  const from = Math.max(0, target - 8); // anima los últimos 8 unidades
+  const from = Math.max(0, target - 8);
   const step = ts => {
     if(!s) s = ts;
     const p = Math.min((ts-s)/dur, 1);
@@ -1140,9 +1159,7 @@ function animCount(el, target, dur) {
   requestAnimationFrame(step);
 }
 
-// ═══════════════════════════════════════
-// SCROLL REVEAL
-// ═══════════════════════════════════════
+// ── SCROLL REVEAL ──
 const obs = new IntersectionObserver(es => es.forEach(e => {
   if(e.isIntersecting) {
     e.target.classList.add('visible');
@@ -1153,17 +1170,13 @@ const obs = new IntersectionObserver(es => es.forEach(e => {
 }), { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
 
-// ═══════════════════════════════════════
-// CTA CLICK LOG + SOUND
-// ═══════════════════════════════════════
+// ── CTA CLICK ──
 document.getElementById('ctaBtn').addEventListener('click', () => {
   logEvent('cta_click');
   playSound('click');
 });
 
-// ═══════════════════════════════════════
-// CURSOR
-// ═══════════════════════════════════════
+// ── CURSOR ──
 const cursor = document.getElementById('cursor'), ring = document.getElementById('cursorRing');
 let mx = 0, my = 0, rx = 0, ry = 0;
 if(cursor && ring) {
@@ -1171,9 +1184,7 @@ if(cursor && ring) {
   (function a() { rx += (mx-rx)*.12; ry += (my-ry)*.12; ring.style.left = rx+'px'; ring.style.top = ry+'px'; requestAnimationFrame(a); })();
 }
 
-// ═══════════════════════════════════════
-// SMOKE BG
-// ═══════════════════════════════════════
+// ── SMOKE BG ──
 const bg = document.getElementById('smokeBg');
 for(let i = 0; i < 9; i++) {
   const p = document.createElement('div');
@@ -1183,9 +1194,7 @@ for(let i = 0; i < 9; i++) {
   bg.appendChild(p);
 }
 
-// ═══════════════════════════════════════
-// SECURITY
-// ═══════════════════════════════════════
+// ── SECURITY ──
 document.addEventListener('contextmenu', e => e.preventDefault());
 document.addEventListener('keydown', e => {
   if(e.key === 'F12') e.preventDefault();
@@ -1199,14 +1208,11 @@ setInterval(() => {
   else if(!t && _dt) { _dt = false; document.body.style.filter = ''; }
 }, 1000);
 
-// ═══════════════════════════════════════
-// EXIT INTENT — Desktop only, 1 vez por sesión
-// ═══════════════════════════════════════
+// ── EXIT INTENT ──
 let _exitShown = false;
 document.addEventListener('mouseleave', e => {
   if(e.clientY <= 0 && !_exitShown && SS.get('churrearg_access') === '1') {
     _exitShown = true;
-    SS.set('churrearg_exit_shown', '1');
     document.getElementById('exit-overlay').classList.add('visible');
   }
 });
@@ -1214,37 +1220,170 @@ function closeExitOverlay() {
   document.getElementById('exit-overlay').classList.remove('visible');
 }
 
-// ═══════════════════════════════════════
-// UNIT BADGE DOWNLOAD
-// ═══════════════════════════════════════
-function downloadBadge() {
-  const svg = document.getElementById('unit-badge-svg');
-  const serializer = new XMLSerializer();
-  const svgStr = serializer.serializeToString(svg);
-  const canvas = document.createElement('canvas');
-  canvas.width = 520; canvas.height = 520;
+// ── INSTAGRAM STORY GENERATOR ──
+function renderStoryCanvas(code) {
+  const canvas = document.getElementById('story-canvas');
+  if(!canvas) return;
   const ctx = canvas.getContext('2d');
-  ctx.fillStyle = '#0A0A0A';
-  ctx.fillRect(0, 0, 520, 520);
-  const img = new Image();
-  const blob = new Blob([svgStr], {type: 'image/svg+xml;charset=utf-8'});
-  const url = URL.createObjectURL(blob);
-  img.onload = () => {
-    ctx.drawImage(img, 0, 0, 520, 520);
-    URL.revokeObjectURL(url);
-    const a = document.createElement('a');
-    const code = LS.get('churrearg_user') || 'vip00';
-    a.download = `churrearg-${getUnit(code).replace('#','')}.png`;
-    a.href = canvas.toDataURL('image/png');
-    a.click();
-    logEvent('badge_download', code);
-  };
-  img.src = url;
+  const W = 1080, H = 1920;
+
+  ctx.fillStyle = '#000000';
+  ctx.fillRect(0, 0, W, H);
+
+  for(let i = 0; i < 8000; i++) {
+    const x = Math.random() * W;
+    const y = Math.random() * H;
+    const a = Math.random() * 0.025;
+    ctx.fillStyle = `rgba(201,168,76,${a})`;
+    ctx.fillRect(x, y, 1, 1);
+  }
+
+  const grd = ctx.createRadialGradient(W/2, H*0.42, 0, W/2, H*0.42, 700);
+  grd.addColorStop(0, 'rgba(201,168,76,0.07)');
+  grd.addColorStop(1, 'rgba(0,0,0,0)');
+  ctx.fillStyle = grd;
+  ctx.fillRect(0, 0, W, H);
+
+  ctx.strokeStyle = 'rgba(201,168,76,0.35)';
+  ctx.lineWidth = 2;
+  ctx.strokeRect(40, 40, W-80, H-80);
+
+  ctx.strokeStyle = 'rgba(201,168,76,0.1)';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(60, 60, W-120, H-120);
+
+  const corners = [[40,40],[W-40,40],[40,H-40],[W-40,H-40]];
+  const cLen = 60;
+  ctx.strokeStyle = 'rgba(201,168,76,0.7)';
+  ctx.lineWidth = 2.5;
+  corners.forEach(([cx,cy]) => {
+    const sx = cx === 40 ? 1 : -1;
+    const sy = cy === 40 ? 1 : -1;
+    ctx.beginPath(); ctx.moveTo(cx + sx*cLen, cy); ctx.lineTo(cx, cy); ctx.lineTo(cx, cy + sy*cLen);
+    ctx.stroke();
+  });
+
+  function drawTracked(text, x, y, letterSpacing) {
+    let totalW = 0;
+    for(let c of text) totalW += ctx.measureText(c).width + letterSpacing;
+    totalW -= letterSpacing;
+    let curX = x - totalW / 2;
+    for(let c of text) {
+      ctx.fillText(c, curX, y);
+      curX += ctx.measureText(c).width + letterSpacing;
+    }
+  }
+
+  ctx.fillStyle = '#C9A84C';
+  ctx.font = 'bold 64px Georgia, serif';
+  ctx.textAlign = 'center';
+  drawTracked('CHURREARG', W/2, 210, 8);
+
+  ctx.strokeStyle = 'rgba(201,168,76,0.25)';
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(200, 240); ctx.lineTo(W-200, 240); ctx.stroke();
+
+  ctx.fillStyle = 'rgba(201,168,76,0.5)';
+  ctx.font = '32px Georgia, serif';
+  drawTracked("COLLECTOR'S DROP #01", W/2, 310, 4);
+
+  ctx.fillStyle = 'rgba(232,232,232,0.55)';
+  ctx.font = 'italic 52px Georgia, serif';
+  ctx.fillText('Soy parte de', W/2, 560);
+
+  ctx.fillStyle = 'rgba(232,232,232,0.35)';
+  ctx.font = 'italic 38px Georgia, serif';
+  ctx.fillText('lo que no es para todos.', W/2, 625);
+
+  const unit = code ? getUnit(code) : '#001';
+  const gradNum = ctx.createLinearGradient(W/2-300, 0, W/2+300, 0);
+  gradNum.addColorStop(0, '#e8c96e');
+  gradNum.addColorStop(0.5, '#C9A84C');
+  gradNum.addColorStop(1, '#9a7a30');
+  ctx.fillStyle = gradNum;
+  ctx.font = 'bold 320px Georgia, serif';
+  ctx.fillText(unit, W/2, 1060);
+
+  ctx.fillStyle = 'rgba(201,168,76,0.45)';
+  ctx.font = '36px Georgia, serif';
+  drawTracked('LA PEGAJOSA EDITION', W/2, 1140, 5);
+
+  ctx.strokeStyle = 'rgba(201,168,76,0.2)';
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(180, 1180); ctx.lineTo(W-180, 1180); ctx.stroke();
+
+  ctx.fillStyle = 'rgba(232,232,232,0.75)';
+  ctx.font = 'bold 48px Georgia, serif';
+  ctx.fillText('Tengo una de las 50.', W/2, 1300);
+
+  ctx.fillStyle = 'rgba(232,232,232,0.4)';
+  ctx.font = 'italic 38px Georgia, serif';
+  ctx.fillText('Numerada. Sin reposición.', W/2, 1365);
+
+  ctx.fillStyle = 'rgba(201,168,76,0.5)';
+  ctx.font = '36px Georgia, serif';
+  ctx.fillText('✦', W/2, 1470);
+
+  ctx.fillStyle = 'rgba(232,232,232,0.6)';
+  ctx.font = 'italic 44px Georgia, serif';
+  ctx.fillText('Soy parte de CHURREARG.', W/2, 1570);
+
+  ctx.strokeStyle = 'rgba(201,168,76,0.2)';
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(200, 1640); ctx.lineTo(W-200, 1640); ctx.stroke();
+
+  ctx.fillStyle = '#C9A84C';
+  ctx.font = 'bold 52px Georgia, serif';
+  drawTracked('@churrearg', W/2, 1730, 3);
+
+  ctx.fillStyle = 'rgba(201,168,76,0.35)';
+  ctx.font = '30px Georgia, serif';
+  drawTracked('No es para todos.', W/2, 1800, 2);
+
+  ctx.fillStyle = 'rgba(80,80,80,0.8)';
+  ctx.font = '22px Georgia, serif';
+  drawTracked('CHURREARG™ · Buenos Aires · Argentina', W/2, 1870, 1);
 }
 
-// ═══════════════════════════════════════
-// ADMIN AUTH
-// ═══════════════════════════════════════
+function downloadStory() {
+  const code = LS.get('churrearg_user') || 'vip01';
+  renderStoryCanvas(code);
+  const canvas = document.getElementById('story-canvas');
+  const a = document.createElement('a');
+  a.download = `churrearg-story-${getUnit(code).replace('#','')}.png`;
+  a.href = canvas.toDataURL('image/png');
+  a.click();
+  logEvent('story_download', code);
+  playSound('click');
+}
+
+// ── CERTIFICADO ADMIN CONTROL ──
+function isCertEnabled() {
+  const v = LS.get('churrearg_cert_enabled');
+  return v === null ? true : v === '1';
+}
+function setCertEnabled(val) {
+  LS.set('churrearg_cert_enabled', val ? '1' : '0');
+  logEvent('admin_cert_' + (val ? 'enabled' : 'disabled'));
+  const section = document.getElementById('ig-story-section');
+  if(section) section.classList.toggle('visible', val && SS.get('churrearg_access') === '1');
+}
+function isCertEnabledForCode(code) {
+  if(!isCertEnabled()) return false;
+  const blocked = LS.get('churrearg_cert_blocked') || [];
+  return !blocked.includes(code);
+}
+function toggleCertForCode(code) {
+  const blocked = LS.get('churrearg_cert_blocked') || [];
+  const idx = blocked.indexOf(code);
+  if(idx === -1) blocked.push(code);
+  else blocked.splice(idx, 1);
+  LS.set('churrearg_cert_blocked', blocked);
+  logEvent('admin_cert_toggle', code);
+  apRender();
+}
+
+// ── ADMIN AUTH ──
 const AP_STATE = { auth: false, visible: false, minimized: false, maximized: false, tab: 'overview', chartInterval: null };
 
 function toggleAdmin() {
@@ -1301,9 +1440,6 @@ function apTab(el, name) {
   apRender();
 }
 
-// ═══════════════════════════════════════
-// ADMIN RENDER
-// ═══════════════════════════════════════
 function apSessionTime() {
   const start = parseInt(SS.get('churrearg_session_start')||Date.now());
   const s = Math.floor((Date.now()-start)/1000);
@@ -1328,20 +1464,6 @@ function apRender() {
 
   if(AP_STATE.tab === 'overview') {
     body.innerHTML = `
-      ${isMax ? `<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px;">
-        <div style="background:#111;border:1px solid rgba(201,168,76,.12);padding:16px;text-align:center;">
-          <div style="font-family:'Cinzel',serif;font-size:32px;font-weight:900;color:#C9A84C;line-height:1;">${used}</div>
-          <div style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#444;margin-top:4px;">Accesos activos</div>
-        </div>
-        <div style="background:#111;border:1px solid rgba(201,168,76,.12);padding:16px;text-align:center;">
-          <div style="font-family:'Cinzel',serif;font-size:32px;font-weight:900;color:#2ecc71;line-height:1;">${rem}</div>
-          <div style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#444;margin-top:4px;">Unidades restantes</div>
-        </div>
-        <div style="background:#111;border:1px solid rgba(201,168,76,.12);padding:16px;text-align:center;">
-          <div style="font-family:'Cinzel',serif;font-size:32px;font-weight:900;color:#fff;line-height:1;">${pct}%</div>
-          <div style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#444;margin-top:4px;">Drop asignado</div>
-        </div>
-      </div>` : ''}
       <div class="ap-sub">Stock</div>
       <div class="ap-row"><span class="ap-key">Total unidades</span><span class="ap-val gold">50</span></div>
       <div class="ap-row"><span class="ap-key">Usadas (orgánico)</span><span class="ap-val">${used}</span></div>
@@ -1364,9 +1486,7 @@ function apRender() {
         }).join('')}
       </div>` : ''}
     `;
-  }
-
-  else if(AP_STATE.tab === 'usuario') {
+  } else if(AP_STATE.tab === 'usuario') {
     const code = LS.get('churrearg_user')||'—';
     const sid  = LS.get('churrearg_sid')||'—';
     const acc  = SS.get('churrearg_access') === '1';
@@ -1375,18 +1495,6 @@ function apRender() {
     const vnum = code !== '—' ? getVIPNum(code) : '—';
     const userEvs = evs.slice(0, isMax ? 20 : 5);
     body.innerHTML = `
-      ${isMax ? `<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">
-        <div style="background:#111;border:1px solid rgba(201,168,76,.12);padding:14px;">
-          <div style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#444;margin-bottom:6px;">VIP</div>
-          <div style="font-family:'Cinzel',serif;font-size:22px;font-weight:900;color:#C9A84C;">${vnum}</div>
-          <div style="font-size:10px;color:#555;margin-top:2px;">${code}</div>
-        </div>
-        <div style="background:#111;border:1px solid rgba(201,168,76,.12);padding:14px;">
-          <div style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#444;margin-bottom:6px;">Unidad</div>
-          <div style="font-family:'Cinzel',serif;font-size:22px;font-weight:900;color:#fff;">${unit}</div>
-          <div style="font-size:10px;color:${acc?'#2ecc71':'#e74c3c'};margin-top:2px;">${acc?'● Activo':'○ Sin acceso'}</div>
-        </div>
-      </div>` : ''}
       <div class="ap-sub">Identidad</div>
       <div class="ap-row"><span class="ap-key">Código</span><span class="ap-val gold">${code}</span></div>
       <div class="ap-row"><span class="ap-key">VIP</span><span class="ap-val">${vnum}</span></div>
@@ -1401,44 +1509,11 @@ function apRender() {
       </div>`;
     if(AP_STATE.chartInterval) clearInterval(AP_STATE.chartInterval);
     AP_STATE.chartInterval = setInterval(() => { const el = document.getElementById('apST'); if(el) el.textContent = apSessionTime(); else clearInterval(AP_STATE.chartInterval); }, 1000);
-  }
-
-  else if(AP_STATE.tab === 'analitica') {
+  } else if(AP_STATE.tab === 'analitica') {
     const attempts = parseInt(LS.get('churrearg_attempts')||0);
     const isBlocked = !!LS.get('churrearg_block_ts');
     const totalBadgeD = evs.filter(e=>e.type==='badge_download').length;
     body.innerHTML = `
-      ${isMax ? `
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px;">
-        <div style="background:#111;border:1px solid rgba(201,168,76,.12);padding:12px;text-align:center;">
-          <div style="font-family:'Cinzel',serif;font-size:24px;font-weight:900;color:#2ecc71;">${totalLogins}</div>
-          <div style="font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:#444;margin-top:3px;">Logins</div>
-        </div>
-        <div style="background:#111;border:1px solid rgba(201,168,76,.12);padding:12px;text-align:center;">
-          <div style="font-family:'Cinzel',serif;font-size:24px;font-weight:900;color:#e74c3c;">${totalFails}</div>
-          <div style="font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:#444;margin-top:3px;">Fallos</div>
-        </div>
-        <div style="background:#111;border:1px solid rgba(201,168,76,.12);padding:12px;text-align:center;">
-          <div style="font-family:'Cinzel',serif;font-size:24px;font-weight:900;color:#C9A84C;">${totalCTA}</div>
-          <div style="font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:#444;margin-top:3px;">CTA clicks</div>
-        </div>
-        <div style="background:#111;border:1px solid rgba(201,168,76,.12);padding:12px;text-align:center;">
-          <div style="font-family:'Cinzel',serif;font-size:24px;font-weight:900;color:#fff;">${ratio}</div>
-          <div style="font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:#444;margin-top:3px;">Ratio</div>
-        </div>
-      </div>
-      <div style="background:#0d0d0d;border:1px solid rgba(201,168,76,.08);padding:14px;margin-bottom:12px;">
-        <div style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#333;margin-bottom:10px;">Actividad reciente</div>
-        <div style="display:flex;align-items:flex-end;gap:4px;height:48px;">
-          ${Array.from({length:20},(_,i)=>{
-            const ev=evs[19-i];
-            if(!ev) return `<div style="flex:1;background:rgba(255,255,255,.03);height:4px;"></div>`;
-            const h=ev.type==='login_success'?48:ev.type==='login_fail'?32:ev.type==='cta_click'?40:16;
-            const col=ev.type==='login_success'?'#2ecc71':ev.type==='login_fail'?'#e74c3c':ev.type==='cta_click'?'#C9A84C':'#444';
-            return `<div style="flex:1;background:${col};height:${h}px;opacity:.8;" title="${ev.type} ${ev.ts}"></div>`;
-          }).join('')}
-        </div>
-      </div>` : ''}
       <div class="ap-sub">Métricas</div>
       <div class="ap-row"><span class="ap-key">Total logins</span><span class="ap-val">${totalLogins}</span></div>
       <div class="ap-row"><span class="ap-key">Fallos</span><span class="ap-val red">${totalFails}</span></div>
@@ -1452,29 +1527,15 @@ function apRender() {
       <div style="max-height:${isMax?'280px':'140px'};overflow-y:auto;">
         ${evs.map(e=>`<div class="ap-ev"><span class="ap-ev-t">${e.ts}</span><span class="ap-ev-k">${e.type}</span>${e.detail?` <span class="ap-ev-d">${e.detail}</span>`:''}</div>`).join('')||'<div style="color:#333;font-size:10px">Sin eventos</div>'}
       </div>`;
-  }
-
-  else if(AP_STATE.tab === 'sim') {
-    const simStock = SS.get('ap_sim_stock')||'alto';
-    const simSes   = SS.get('ap_sim_ses')||'nueva';
+  } else if(AP_STATE.tab === 'sim') {
     body.innerHTML = `
       <div class="ap-sub">Simular usuario VIP</div>
       <select class="ap-select" id="apVipSel">${Array.from({length:50},(_,i)=>{const c='vip'+String(i+1).padStart(2,'0');return `<option value="${c}">${c}</option>`;}).join('')}</select>
       <button class="ap-cbtn" onclick="apSimUser()">▶ Simular acceso</button>
-      ${isMax ? `
-      <div class="ap-sub">Simular accesos múltiples</div>
-      <div style="display:flex;gap:6px;margin-bottom:8px;">
-        <button class="ap-cbtn" style="flex:1" onclick="apSimBulk(10)">+10 accesos</button>
-        <button class="ap-cbtn" style="flex:1" onclick="apSimBulk(25)">+25 accesos</button>
-      </div>` : ''}
       <div class="ap-sub">Nivel de stock</div>
-      <div class="ap-sg">${['alto','medio','bajo'].map(l=>`<div class="ap-so ${simStock===l?'active':''}" onclick="apSetStock('${l}')">${l[0].toUpperCase()+l.slice(1)}</div>`).join('')}</div>
-      <div class="ap-sub">Tipo de sesión</div>
-      <div class="ap-sg">${['nueva','recurrente'].map(s=>`<div class="ap-so ${simSes===s?'active':''}" onclick="apSetSes('${s}')">${s[0].toUpperCase()+s.slice(1)}</div>`).join('')}</div>
+      <div class="ap-sg">${['alto','medio','bajo'].map(l=>`<div class="ap-so ${(SS.get('ap_sim_stock')||'alto')===l?'active':''}" onclick="apSetStock('${l}')">${l[0].toUpperCase()+l.slice(1)}</div>`).join('')}</div>
     `;
-  }
-
-  else if(AP_STATE.tab === 'ctrl') {
+  } else if(AP_STATE.tab === 'ctrl') {
     body.innerHTML = `
       <div class="ap-sub">Acciones</div>
       <button class="ap-cbtn" onclick="apCtrl('reset_ses')">↺ Reset sesión actual</button>
@@ -1483,11 +1544,37 @@ function apRender() {
       <button class="ap-cbtn" onclick="apCtrl('clear_events')">↺ Limpiar log de eventos</button>
       <button class="ap-cbtn" onclick="apCtrl('clear_ls')">🗑 Limpiar todo localStorage</button>
       <button class="ap-cbtn danger" onclick="apCtrl('force_logout')">⏻ Forzar logout</button>
-      ${isMax ? `
       <div class="ap-sub">Exportar</div>
       <button class="ap-cbtn" onclick="apExport()">⬇ Exportar log JSON</button>
       <button class="ap-cbtn" onclick="apExportCSV()">⬇ Exportar códigos CSV</button>
-      ` : ''}
+    `;
+  } else if(AP_STATE.tab === 'cert') {
+    const certOn = isCertEnabled();
+    const blocked = LS.get('churrearg_cert_blocked') || [];
+    body.innerHTML = `
+      <div class="ap-sub">Estado global</div>
+      <div class="ap-row"><span class="ap-key">Historia / Cert</span><span class="ap-val ${certOn?'green':'red'}">${certOn?'Habilitado':'Deshabilitado'}</span></div>
+      <div style="display:flex;gap:4px;margin:8px 0 14px;">
+        <div class="ap-so ${certOn?'active':''}" onclick="setCertEnabled(true);apRender();" style="flex:1;padding:8px 4px;">Activar</div>
+        <div class="ap-so ${!certOn?'active':''}" onclick="setCertEnabled(false);apRender();" style="flex:1;padding:8px 4px;">Desactivar</div>
+      </div>
+      <div class="ap-sub">Control por código VIP</div>
+      <div style="display:flex;flex-wrap:wrap;gap:3px;max-height:200px;overflow-y:auto;padding-right:2px;">
+        ${Array.from({length:50},(_,i) => {
+          const c = 'vip' + String(i+1).padStart(2,'0');
+          const isBlocked = blocked.includes(c);
+          return `<div onclick="toggleCertForCode('${c}')"
+            style="padding:4px 8px;font-size:9px;font-family:'Cinzel',serif;
+            border:1px solid ${isBlocked?'rgba(231,76,60,.4)':'rgba(201,168,76,.3)'};
+            color:${isBlocked?'#e74c3c':'#C9A84C'};
+            background:${isBlocked?'rgba(231,76,60,.05)':'transparent'};
+            cursor:pointer;letter-spacing:.04em;transition:all .2s;">${c}</div>`;
+        }).join('')}
+      </div>
+      <div style="margin-top:10px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:9px;color:#444;">${blocked.length} bloqueados · ${50-blocked.length} habilitados</span>
+        ${blocked.length > 0 ? `<div class="ap-so" onclick="LS.set('churrearg_cert_blocked',[]);apRender();" style="padding:4px 10px;font-size:8px;">Reset todo</div>` : ''}
+      </div>
     `;
   }
 }
@@ -1512,11 +1599,6 @@ function apSetStock(l) {
   updateDropStats();
   apRender();
 }
-function apSetSes(s) {
-  SS.set('ap_sim_ses', s);
-  LS.set('churrearg_recurrent', s === 'recurrente' ? '1' : '0');
-  apRender();
-}
 function apCtrl(action) {
   if(action === 'reset_ses') { SS.del('churrearg_access'); SS.del('churrearg_session_start'); logEvent('admin_reset_ses'); }
   else if(action === 'reset_att') { LS.del('churrearg_attempts'); LS.del('churrearg_block_ts'); logEvent('admin_reset_att'); }
@@ -1524,13 +1606,6 @@ function apCtrl(action) {
   else if(action === 'clear_events') { LS.del('churrearg_events'); logEvent('admin_clear_evs'); }
   else if(action === 'clear_ls') { localStorage.clear(); logEvent('admin_clear_ls'); }
   else if(action === 'force_logout') { sessionStorage.clear(); setTimeout(() => location.reload(), 300); }
-  apRender();
-}
-function apSimBulk(n) {
-  const used = getUsedCodes();
-  for(let i = 1; i <= n; i++) { const c = 'vip'+String(i).padStart(2,'0'); if(!used.includes(c)) used.push(c); }
-  LS.set('churrearg_used', used);
-  updateDropStats();
   apRender();
 }
 function apExport() {
@@ -1545,18 +1620,13 @@ function apExportCSV() {
   const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'churrearg_accesos.csv'; a.click();
 }
 
-// ═══════════════════════════════════════
-// INIT — FIX: NO borra usuario persistente
-// ═══════════════════════════════════════
+// ── INIT ──
 (function init() {
-  // Solo limpiar datos de sesión volátiles — NO el usuario ni los códigos
   SS.del('churrearg_access');
   SS.del('churrearg_age');
   SS.del('churrearg_vip_ok');
   SS.del('churrearg_session_start');
-  // NO borrar: churrearg_user, churrearg_sid, churrearg_recurrent, churrearg_used
 
-  // Precargar stock base si localStorage está vacío
   if(!LS.get('churrearg_used')) {
     const sold = Array.from({length:23}, (_, i) => 'vip' + String(i+1).padStart(2,'0'));
     LS.set('churrearg_used', sold);
@@ -1565,17 +1635,14 @@ function apExportCSV() {
   checkIntegrity();
   updateDropStats(true);
 
-  // FIX: lógica de flujo correcta — 3 estados posibles
   const savedCode = LS.get('churrearg_user');
 
   if(savedCode && VALID.includes(savedCode)) {
-    // Usuario conocido — mostrar pantalla de bienvenida de vuelta
     document.getElementById('age-gate').classList.add('hidden');
     document.getElementById('vip-gate').classList.remove('visible');
     showReturningGate(savedCode);
     liftCover();
   } else {
-    // Usuario nuevo — flujo normal
     document.getElementById('age-gate').classList.add('hidden');
     showVipGate();
     setTimeout(() => liftCover(), 50);
