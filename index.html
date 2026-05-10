@@ -707,7 +707,6 @@ footer{padding:clamp(36px,5vw,50px) clamp(16px,4vw,24px);text-align:center;borde
     <button class="ap-tab" onclick="apTab(this,'analitica')">Analítica</button>
     <button class="ap-tab" onclick="apTab(this,'sim')">Simulación</button>
     <button class="ap-tab" onclick="apTab(this,'ctrl')">Control</button>
-    <button class="ap-tab" onclick="apTab(this,'cert')">Cert</button>
   </div>
   <div id="ap-body"></div>
 </div>
@@ -1383,7 +1382,7 @@ function initVIPSession() {
 
   // Instagram Story — mostrar sección solo si el certificado está habilitado para este código
   const storySection = document.getElementById('ig-story-section');
-  if(storySection && isCertEnabledForCode(code)) {
+  if(storySection) {
     storySection.style.display = 'block';
     setTimeout(() => renderStoryCanvas(code), 200);
   }
@@ -1818,38 +1817,6 @@ function downloadStory() {
 }
 
 // ═══════════════════════════════════════
-// CERTIFICADO — CONTROL ADMIN
-// ═══════════════════════════════════════
-function isCertEnabled() {
-  // Global: '1' = habilitado, '0' = deshabilitado. Default: habilitado
-  const v = LS.get('churrearg_cert_enabled');
-  return v === null ? true : v === '1';
-}
-function setCertEnabled(val) {
-  LS.set('churrearg_cert_enabled', val ? '1' : '0');
-  logEvent('admin_cert_' + (val ? 'enabled' : 'disabled'));
-  // Actualizar sección visible si el usuario está logueado
-  const section = document.getElementById('ig-story-section');
-  if(section) section.style.display = (val && SS.get('churrearg_access') === '1') ? 'block' : 'none';
-}
-
-function isCertEnabledForCode(code) {
-  if(!isCertEnabled()) return false;
-  // Lista negra: array de códigos con cert deshabilitado individualmente
-  const blocked = LS.get('churrearg_cert_blocked') || [];
-  return !blocked.includes(code);
-}
-function toggleCertForCode(code) {
-  const blocked = LS.get('churrearg_cert_blocked') || [];
-  const idx = blocked.indexOf(code);
-  if(idx === -1) blocked.push(code);
-  else blocked.splice(idx, 1);
-  LS.set('churrearg_cert_blocked', blocked);
-  logEvent('admin_cert_toggle', code);
-  apRender();
-}
-
-// ═══════════════════════════════════════
 // ADMIN AUTH
 // ═══════════════════════════════════════
 const AP_STATE = { auth: false, visible: false, minimized: false, maximized: false, tab: 'overview', chartInterval: null };
@@ -2098,40 +2065,6 @@ function apRender() {
     `;
   }
 
-  else if(AP_STATE.tab === 'cert') {
-    const certOn = isCertEnabled();
-    const blocked = LS.get('churrearg_cert_blocked') || [];
-    body.innerHTML = `
-      <div class="ap-sub">Estado global</div>
-      <div class="ap-row">
-        <span class="ap-key">Certificado / Story</span>
-        <span class="ap-val ${certOn?'green':'red'}">${certOn?'Habilitado':'Deshabilitado'}</span>
-      </div>
-      <div style="display:flex;gap:4px;margin:8px 0 14px;">
-        <div class="ap-so ${certOn?'active':''}" onclick="setCertEnabled(true);apRender();" style="flex:1;padding:8px 4px;">Activar</div>
-        <div class="ap-so ${!certOn?'active':''}" onclick="setCertEnabled(false);apRender();" style="flex:1;padding:8px 4px;">Desactivar</div>
-      </div>
-      <div class="ap-sub">Control por código VIP</div>
-      <div style="font-size:9px;color:#444;margin-bottom:8px;letter-spacing:.04em;">Tocá un código para bloquear/desbloquear su certificado individualmente.</div>
-      <div style="display:flex;flex-wrap:wrap;gap:3px;max-height:${isMax?'340px':'200px'};overflow-y:auto;padding-right:2px;">
-        ${Array.from({length:50},(_,i) => {
-          const c = 'vip' + String(i+1).padStart(2,'0');
-          const isBlocked = blocked.includes(c);
-          return `<div onclick="toggleCertForCode('${c}')"
-            style="padding:4px 8px;font-size:9px;font-family:'Cinzel',serif;
-            border:1px solid ${isBlocked?'rgba(231,76,60,.4)':'rgba(201,168,76,.3)'};
-            color:${isBlocked?'#e74c3c':'#C9A84C'};
-            background:${isBlocked?'rgba(231,76,60,.05)':'transparent'};
-            cursor:pointer;letter-spacing:.04em;transition:all .2s;
-            title="${isBlocked?'Bloqueado — clic para habilitar':'Habilitado — clic para bloquear'}">${c}</div>`;
-        }).join('')}
-      </div>
-      <div style="margin-top:10px;display:flex;justify-content:space-between;align-items:center;">
-        <span style="font-size:9px;color:#444;">${blocked.length} bloqueados · ${50-blocked.length} habilitados</span>
-        ${blocked.length > 0 ? `<div class="ap-so" onclick="LS.set('churrearg_cert_blocked',[]);apRender();" style="padding:4px 10px;font-size:8px;">Reset todo</div>` : ''}
-      </div>
-    `;
-  }
 }
 
 function apSimUser() {
